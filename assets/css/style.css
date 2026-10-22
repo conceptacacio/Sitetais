@@ -377,3 +377,67 @@ body.has-scrolled .whatsapp-floating { opacity: 1; visibility: visible; pointer-
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
+
+
+/* Banner institucional — imagem fornecida, sem recriação ou alteração de composição. */
+.hero {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  min-height: 620px;
+  padding: 56px 0 68px;
+  overflow: hidden;
+  color: #fff;
+  background-color: #062f52;
+  background-image: linear-gradient(90deg, rgba(3, 27, 51, .22) 0%, rgba(3, 27, 51, .16) 42%, rgba(3, 27, 51, 0) 75%), url('../images/banner-interliga-saude.webp');
+  background-size: cover;
+  background-position: center 38%;
+  background-repeat: no-repeat;
+}
+.hero-layout { display: block; position: relative; z-index: 1; }
+.hero-copy { max-width: 560px; padding-block: 20px; }
+.hero .eyebrow { color: #d1fff4; }
+.hero h1 { color: #fff; text-shadow: 0 2px 14px rgba(3, 25, 46, .35); }
+.hero .hero-description, .hero .hero-caption { color: rgba(255, 255, 255, .94); }
+.hero .mini-line { background: #42d4bc; }
+.hero .button-primary { background: #006e66; color: #fff; border-color: rgba(255, 255, 255, .52); box-shadow: 0 7px 22px rgba(2, 21, 39, .22); }
+.hero .button-primary:hover { background: #075d73; }
+.hero .text-link { color: #fff; text-shadow: 0 1px 6px rgba(3, 25, 46, .32); }
+.hero .text-link:hover { color: #a4f8e9; border-color: #a4f8e9; }
+.hero-image-caption { position: absolute; z-index: 2; right: 0; bottom: 18px; left: 0; width: min(1180px, calc(100% - 80px)); margin-inline: auto; display: flex; justify-content: flex-end; align-items: center; gap: 18px; color: rgba(255, 255, 255, .9); font-size: 10px; text-shadow: 0 1px 8px rgba(2, 19, 37, .45); }
+.hero-image-caption span:first-child { font-size: 9px; letter-spacing: 1.7px; font-weight: 500; }
+.hero-image-description { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+@media (max-width: 1050px) {
+  .hero { min-height: 610px; background-position: center 36%; }
+  .hero-copy { max-width: 540px; }
+}
+@media (max-width: 900px) {
+  .hero { min-height: 650px; padding-block: 48px 68px; background-image: linear-gradient(90deg, rgba(3, 27, 51, .76) 0%, rgba(3, 27, 51, .60) 48%, rgba(3, 27, 51, .18) 100%), url('../images/banner-interliga-saude.webp'); background-position: 70% 37%; }
+  .hero-copy { max-width: 520px; }
+  .hero-image-caption { width: calc(100% - 40px); }
+}
+@media (max-width: 700px) {
+  .hero { min-height: 720px; align-items: flex-start; padding: 30px 0 64px; background-image: linear-gradient(180deg, rgba(3, 27, 51, .98) 0%, rgba(3, 27, 51, .96) 50%, rgba(3, 27, 51, .70) 67%, rgba(3, 27, 51, .12) 100%), url('../images/banner-interliga-saude.webp'); background-size: 100% 100%, 118% auto; background-position: center, center bottom; }
+  .hero-copy { max-width: 500px; padding-block: 13px 18px; }
+  .hero-image-caption { bottom: 14px; width: calc(100% - 40px); gap: 11px; font-size: 8px; }
+  .hero-image-caption span:first-child { font-size: 8px; }
+}
+@media (max-width: 380px) {
+  .hero { min-height: 740px; background-position: center, center bottom; }
+}
+
+
+/* Assinatura da marca junto ao logotipo no cabeçalho. */
+.site-header .brand-descriptor { display: block; width: 118px; padding: 0 0 0 16px; border-left: 1px solid var(--teal); color: var(--navy); font-family: 'Manrope', sans-serif; font-size: 14px; font-weight: 500; line-height: 1.27; letter-spacing: 0; white-space: normal; }
+.site-header .brand-tagline-accent { color: var(--teal); font-weight: 600; }
+@media (max-width: 900px) {
+  .site-header .brand-descriptor { width: 104px; padding-left: 13px; font-size: 12px; line-height: 1.25; }
+}
+@media (max-width: 380px) {
+  .site-header .brand-descriptor { width: 92px; padding-left: 10px; font-size: 11px; }
+}
+
+
+/* Preview edit: resize only the logo image in the top header, not the footer copy. */
+.site-header .brand > img { height: 84px; }

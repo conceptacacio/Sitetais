@@ -24,7 +24,7 @@ O formulário valida os campos no navegador. Depois de configurar um WhatsApp ou
 - `assets/css/style.css` — identidade visual, layout responsivo e animações.
 - `assets/js/script.js` — menu, FAQ, validação do formulário e canais de contato.
 - `assets/js/config.js` — dados institucionais configuráveis.
-- `assets/images/` — logo e foto do banner em WebP otimizado.
+- `assets/images/banner-interliga-saude.webp` — banner fornecido, convertido para WebP sem redimensionar ou recortar (1774 × 887); `interliga-logo.webp` — logotipo.
 - `assets/fonts/` — fontes WOFF2 locais e respectivas licenças OFL.
 
 Não envie `node_modules`, caches, arquivos temporários ou arquivos-fonte do ambiente de desenvolvimento; eles não fazem parte deste pacote.
