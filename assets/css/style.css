@@ -441,3 +441,60 @@ body.has-scrolled .whatsapp-floating { opacity: 1; visibility: visible; pointer-
 
 /* Preview edit: resize only the logo image in the top header, not the footer copy. */
 .site-header .brand > img { height: 84px; }
+
+
+/* Foto enviada: composição preservada na coluna visual de Quem Somos. */
+.about-layout { grid-template-columns: minmax(0, .88fr) minmax(0, 1.12fr); grid-template-areas: "heading image" "copy image"; column-gap: clamp(30px, 6vw, 82px); row-gap: 16px; align-items: center; }
+.about-heading { grid-area: heading; }
+.about-copy { grid-area: copy; padding-top: 0; }
+.about-image { grid-area: image; min-width: 0; margin: 0; padding: 8px; overflow: hidden; background: #fff; border: 1px solid var(--line); border-radius: 18px; box-shadow: 0 16px 42px rgba(6, 53, 79, .1); }
+.about-image img { display: block; width: 100%; height: auto; border-radius: 12px; }
+@media (max-width: 900px) {
+  .about-layout { grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); column-gap: 28px; }
+}
+@media (max-width: 700px) {
+  .about-layout { grid-template-columns: 1fr; grid-template-areas: "heading" "copy" "image"; row-gap: 18px; }
+  .about-copy { padding-top: 0; }
+  .about-image { margin-top: 4px; }
+}
+
+/* Nossas soluções — imagem à esquerda, descrições alinhadas à direita. */
+.solutions-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.04fr); gap: clamp(28px, 5vw, 68px); align-items: center; max-width: 1140px; margin-inline: auto; }
+.solutions-image { min-width: 0; margin: 0; padding: 8px; background: #fff; border: 1px solid var(--line); border-radius: 16px; box-shadow: 0 16px 42px rgba(6, 53, 79, .1); }
+.solutions-image-frame { aspect-ratio: 1460 / 820; overflow: hidden; border-radius: 10px; background: #e8f0ef; }
+.solutions-feature-image { display: block; width: 100%; height: 100%; object-fit: cover; }
+.solutions-image-caption { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 13px; padding: 14px 7px 4px; }
+.solutions-feature-label { color: var(--teal); font-size: 8px; font-weight: 700; letter-spacing: 1.15px; }
+.solutions-feature-copy { color: var(--navy); font-size: 12px; font-weight: 600; }
+.solutions-feature-credit { display: inline-flex; align-items: center; gap: 6px; margin-left: auto; color: #71838a; font-size: 9px; }
+.solutions-feature-credit:hover { color: var(--teal); }
+.solutions-feature-credit span { font-size: 12px; }
+.solutions-content { min-width: 0; }
+.solutions-content > .eyebrow { margin-bottom: 12px; }
+.solutions-content h2 { margin-bottom: 22px; font-size: clamp(30px, 3.1vw, 39px); line-height: 1.2; }
+.solution-list { border-top: 1px solid var(--line); }
+.solution-item { display: grid; grid-template-columns: 25px minmax(0, 1fr); gap: 13px; padding: 15px 0; border-bottom: 1px solid var(--line); }
+.solution-item-number { padding-top: 2px; color: var(--teal); font-family: 'Manrope', sans-serif; font-size: 10px; font-weight: 700; }
+.solution-item h3 { color: var(--navy); font-size: 13px; line-height: 1.45; }
+.solution-item p { margin-top: 5px; font-size: 10px; line-height: 1.7; }
+.solution-item .card-link { display: inline-flex; justify-content: flex-start; gap: 7px; margin-top: 8px; padding: 0; border: 0; font-size: 9px; }
+.solution-item .card-link .icon { width: 14px; height: 14px; }
+.solutions-validation-note { margin-top: 13px; padding-left: 10px; border-left: 2px solid #dce9e5; color: #71838a; font-size: 9px; line-height: 1.6; }
+@media (max-width: 900px) {
+  .solutions-layout { grid-template-columns: minmax(0, .96fr) minmax(0, 1.04fr); gap: 25px; }
+  .solutions-content h2 { font-size: 31px; }
+  .solution-item { grid-template-columns: 22px minmax(0, 1fr); gap: 10px; padding: 13px 0; }
+  .solution-item h3 { font-size: 12px; }
+  .solution-item p { font-size: 9px; }
+}
+@media (max-width: 700px) {
+  .solutions-layout { grid-template-columns: 1fr; gap: 27px; }
+  .solutions-image { order: 0; }
+  .solutions-content { order: 1; }
+  .solutions-content h2 { margin-bottom: 18px; font-size: 31px; }
+  .solution-item { grid-template-columns: 25px minmax(0, 1fr); gap: 12px; padding: 15px 0; }
+  .solution-item h3 { font-size: 14px; }
+  .solution-item p { font-size: 11px; }
+  .solution-item .card-link { font-size: 10px; }
+  .solutions-validation-note { font-size: 9px; }
+}

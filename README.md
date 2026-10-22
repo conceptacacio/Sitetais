@@ -1,6 +1,6 @@
 # Interliga Saúde — pacote para GitHub Pages
 
-Este diretório contém a landing page estática pronta para publicação. O desenho, as cores, os textos e as funcionalidades foram preservados; o HTML, CSS e JavaScript estão organizados em arquivos separados, e as imagens e as fontes Inter/Manrope estão incluídas localmente. Não há etapa de compilação, bibliotecas externas, backend ou dependência do Manus.
+Este diretório contém a landing page estática pronta para publicação. Em “Nossas soluções”, a imagem de reunião da Doodle fica à esquerda e as descrições ficam à direita; a página não exibe rótulo de crédito, mas a origem e o link permanecem registrados neste README. As descrições de serviço foram adaptadas da referência PRC e precisam ser confirmadas pela Interliga antes da divulgação. O HTML, CSS, JavaScript, imagens e fontes Inter/Manrope estão no pacote; não há compilação, backend ou dependência do Manus.
 
 ## Publicar
 
@@ -15,7 +15,7 @@ Os caminhos são relativos. Portanto, os mesmos arquivos funcionam na raiz de um
 
 Antes de divulgar o site, preencha os dados confirmados pela empresa no arquivo `assets/js/config.js`: número internacional do WhatsApp (somente dígitos), e-mail, telefone, endereço/região, apresentação institucional e soluções. Revise os campos pendentes no HTML e valide o aviso de privacidade. Não acrescente dados de contato ou de clientes sem confirmação e autorização.
 
-O formulário valida os campos no navegador. Depois de configurar um WhatsApp ou e-mail válido, ele prepara a mensagem no aplicativo correspondente para a pessoa revisar e enviar. Não há backend, armazenamento de leads nem envio automático nesta versão. O botão do WhatsApp usa o canal oficial somente depois da configuração.
+O formulário valida os campos no navegador. Depois de configurar um WhatsApp ou e-mail válido, ele prepara a mensagem no aplicativo correspondente para a pessoa revisar e enviar. Não há backend, armazenamento de leads nem envio automático nesta versão.
 
 ## Estrutura
 
@@ -24,7 +24,12 @@ O formulário valida os campos no navegador. Depois de configurar um WhatsApp ou
 - `assets/css/style.css` — identidade visual, layout responsivo e animações.
 - `assets/js/script.js` — menu, FAQ, validação do formulário e canais de contato.
 - `assets/js/config.js` — dados institucionais configuráveis.
-- `assets/images/banner-interliga-saude.webp` — banner fornecido, convertido para WebP sem redimensionar ou recortar (1774 × 887); `interliga-logo.webp` — logotipo.
+- `assets/images/` — banner fornecido, logotipo, foto `conectar.jpg` (mantida sem reprocessamento) e `doodle-group-meeting.webp`, exibida à esquerda em “Nossas soluções”; a origem e o link para Doodle estão documentados neste README.
 - `assets/fonts/` — fontes WOFF2 locais e respectivas licenças OFL.
 
 Não envie `node_modules`, caches, arquivos temporários ou arquivos-fonte do ambiente de desenvolvimento; eles não fazem parte deste pacote.
+
+
+## Fonte da imagem de reunião
+
+Imagem obtida de [Doodle — The importance of setting agendas for meetings](https://doodle.com/pt_BR/the-importance-of-setting-agendas-for-meetings/). A página não exibe legenda de crédito.
