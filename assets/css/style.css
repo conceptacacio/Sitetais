@@ -188,17 +188,6 @@ input[aria-invalid='true'], textarea[aria-invalid='true'] { border-color: #b4424
 .form-disclaimer .icon { width: 13px; height: 13px; margin-top: 1px; color: #788c91; }
 .form-status { font-size: 12px; background: #e5f1ed; color: var(--navy); border-left: 2px solid var(--teal); padding: 12px; margin-top: 14px; }
 .honeypot { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
-.site-footer { background: #f7faf9; border-top: 1px solid var(--line); }
-.footer-top { display: flex; justify-content: space-between; align-items: center; gap: 35px; padding-block: 23px 29px; }
-.footer-brand .brand img { width: 90px; height: 90px; }
-.footer-brand > p { font-size: 10px; margin-left: 4px; }
-.footer-top nav { display: flex; gap: 27px; font-size: 10px; }
-.footer-top nav a:hover { color: var(--teal); }
-.footer-message span { font-size: 8px; color: #72868d; letter-spacing: 1px; }
-.footer-message p { font-family: 'Manrope', sans-serif; font-size: 20px; color: var(--teal); letter-spacing: -.6px; }
-.footer-bottom { display: flex; justify-content: space-between; gap: 20px; align-items: center; padding: 21px 0; border-top: 1px solid var(--line); font-size: 9px; color: #75868d; }
-.footer-bottom p { font-size: 9px; }
-.footer-bottom a { color: var(--navy); }
 .whatsapp-floating { position: fixed; bottom: 25px; right: 26px; background: var(--teal); color: white; border: 1px solid #ffffff; width: 49px; height: 49px; border-radius: 50%; display: grid; place-items: center; z-index: 45; box-shadow: 0 5px 20px #103e5525; transition: transform .2s, background .2s; }
 .whatsapp-floating { opacity: 0; visibility: hidden; pointer-events: none; }
 body.has-scrolled .whatsapp-floating { opacity: 1; visibility: visible; pointer-events: auto; }
@@ -223,7 +212,6 @@ body.has-scrolled .whatsapp-floating { opacity: 1; visibility: visible; pointer-
   .commitment-inner { grid-template-columns: 1fr auto; }
   .commitment-mark { display: none; }
   .form-panel { padding: 24px; }
-  .footer-message { display: none; }
 }
 @media (max-width: 900px) {
   html { scroll-padding-top: 82px; }
@@ -288,8 +276,6 @@ body.has-scrolled .whatsapp-floating { opacity: 1; visibility: visible; pointer-
   .contact-copy > .button { margin-top: 23px; }
   .contact-lead { font-size: 12px; }
   .form-panel { padding: 28px; }
-  .footer-bottom { flex-wrap: wrap; font-size: 8px; }
-  .footer-bottom > span { width: 100%; }
 }
 @media (max-width: 700px) {
   .container { width: calc(100% - 40px); }
@@ -364,12 +350,6 @@ body.has-scrolled .whatsapp-floating { opacity: 1; visibility: visible; pointer-
   input:not([type='checkbox']), textarea { font-size: 14px; padding: 12px; }
   .consent-label { font-size: 10px; }
   .form-disclaimer { font-size: 9px; }
-  .footer-top { display: block; padding-block: 18px 27px; }
-  .footer-top nav { flex-wrap: wrap; gap: 17px; margin-top: 24px; font-size: 11px; }
-  .footer-brand > p { font-size: 11px; }
-  .footer-bottom { font-size: 9px; gap: 12px; padding-block: 17px 26px; }
-  .footer-bottom p { font-size: 8px; max-width: 235px; }
-  .footer-bottom span { font-size: 8px; padding-right: 35px; }
   .whatsapp-floating { right: 17px; bottom: 18px; width: 45px; height: 45px; }
   .privacy-main h1 { font-size: 32px; }
 }
@@ -497,4 +477,80 @@ body.has-scrolled .whatsapp-floating { opacity: 1; visibility: visible; pointer-
   .solution-item p { font-size: 11px; }
   .solution-item .card-link { font-size: 10px; }
   .solutions-validation-note { font-size: 9px; }
+}
+
+
+/* Associação médica — chamada destacada e formulário organizado por grupos. */
+.nav-associate-link { display: inline-flex; align-items: center; min-height: 40px; padding: 8px 12px; border: 1px solid #c9e6df; border-radius: 6px; background: #f4fbf9; color: var(--teal); font-weight: 600; white-space: nowrap; transition: background .2s, border-color .2s, color .2s; }
+.nav-associate-link:hover { background: var(--mint-light); border-color: var(--teal); color: var(--navy); }
+.association { background: var(--paper); }
+.association-heading { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .9fr); gap: 48px; align-items: end; margin-bottom: 33px; }
+.association-heading h2 { font-size: clamp(31px, 3.3vw, 44px); }
+.association-intro-copy { max-width: 550px; margin-top: 14px; font-size: 13px; }
+.association-security-note { display: flex; align-items: flex-start; gap: 13px; padding: 17px 18px; border: 1px solid #cfe7e0; border-left: 3px solid var(--teal); border-radius: 8px; background: var(--white); }
+.association-security-note .icon { width: 21px; height: 21px; margin-top: 1px; flex: none; color: var(--teal); }
+.association-security-note p { color: var(--navy); font-size: 11px; line-height: 1.7; }
+.association-security-note strong { font-weight: 700; }
+.association-card { max-width: 980px; margin-inline: auto; padding: 34px; border: 1px solid #e2ece8; border-radius: 14px; background: var(--white); box-shadow: 0 16px 42px rgba(6, 53, 79, .07); }
+.association-card-heading { display: flex; align-items: center; gap: 14px; margin-bottom: 25px; padding-bottom: 21px; border-bottom: 1px solid var(--line); }
+.association-card-heading .icon-box { flex: none; }
+.association-card-heading h3 { font-size: 20px; }
+.association-card-heading p { margin-top: 5px; font-size: 11px; }
+.association-form fieldset { min-width: 0; margin: 0; padding: 0; border: 0; }
+.association-legend { margin-bottom: 18px; color: var(--navy); font-size: 11px; font-weight: 600; }
+.association-groups { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 25px 34px; }
+.association-group { min-width: 0; padding-top: 18px; border-top: 1px solid var(--line); }
+.association-group--contact, .association-group--professional, .association-group--availability { grid-column: 1 / -1; }
+.association-group h4 { margin: 0 0 14px; color: var(--navy); font-family: 'Manrope', sans-serif; font-size: 14px; font-weight: 700; line-height: 1.45; }
+.association-field-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 18px; }
+.association-field-grid--contact { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.association-field { min-width: 0; margin-bottom: 0; }
+.association-fields .field-hint { margin-top: 5px; color: #71838a; font-size: 10px; }
+.association-submit { width: 100%; margin-top: 24px; justify-content: space-between; }
+.association-form .form-disclaimer { margin-top: 12px; }
+.association-form .form-status { margin-top: 12px; }
+@media (max-width: 1050px) {
+  .association-heading { gap: 28px; }
+  .association-card { padding: 29px; }
+}
+@media (max-width: 900px) {
+  .site-nav > .nav-associate-link { padding-inline: 10px; }
+  .association-heading { gap: 24px; }
+  .association-groups { gap: 22px 25px; }
+}
+@media (max-width: 700px) {
+  .site-nav > .nav-associate-link { min-height: 0; margin-top: 4px; padding: 13px 12px; }
+  .association-heading { grid-template-columns: 1fr; gap: 19px; margin-bottom: 23px; }
+  .association-heading h2 { font-size: 31px; }
+  .association-intro-copy { margin-top: 12px; font-size: 12px; }
+  .association-security-note { padding: 14px; }
+  .association-security-note p { font-size: 11px; }
+  .association-card { padding: 23px 19px; }
+  .association-card-heading { align-items: flex-start; gap: 12px; margin-bottom: 19px; padding-bottom: 17px; }
+  .association-card-heading h3 { font-size: 18px; }
+  .association-card-heading p { font-size: 10px; }
+  .association-legend { margin-bottom: 14px; }
+  .association-groups { grid-template-columns: 1fr; gap: 8px; }
+  .association-group--contact, .association-group--professional, .association-group--availability { grid-column: auto; }
+  .association-group { padding-top: 16px; }
+  .association-group h4 { margin-bottom: 12px; font-size: 14px; }
+  .association-field-grid, .association-field-grid--contact { grid-template-columns: 1fr; gap: 0; }
+  .association-field { margin-bottom: 14px; }
+  .association-fields .form-field label { font-size: 12px; }
+  .association-fields input:not([type='checkbox']), .association-fields textarea { font-size: 14px; }
+  .association-submit { margin-top: 10px; }
+}
+
+/* Atalho flutuante de associação e alinhamento do conteúdo do banner em celular. */
+.association-floating { position: fixed; right: 26px; bottom: 86px; display: grid; place-items: center; width: 49px; height: 49px; border: 1px solid #fff; border-radius: 50%; background: var(--teal); color: #fff; z-index: 45; box-shadow: 0 5px 20px #103e5525; opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .2s, transform .2s, background .2s, visibility .2s; }
+body.has-scrolled .association-floating { opacity: 1; visibility: visible; pointer-events: auto; }
+.association-floating:hover { transform: translateY(-3px); background: #006e66; }
+.association-floating:focus-visible { opacity: 1; visibility: visible; pointer-events: auto; outline: 3px solid var(--mint); outline-offset: 4px; }
+.association-floating .icon { width: 24px; height: 24px; }
+@media (max-width: 700px) {
+  .association-floating { right: 17px; bottom: 73px; width: 45px; height: 45px; }
+  .hero-copy { text-align: center; }
+  .hero-copy .eyebrow { justify-content: center; }
+  .hero-description { margin-inline: auto; }
+  .hero-actions { justify-content: center; }
 }

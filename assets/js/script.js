@@ -36,6 +36,18 @@
       consent: document.getElementById('consent'),
       website: document.getElementById('website')
     };
+    var associationForm = document.getElementById('association-form');
+    var associationFormStatus = document.getElementById('association-form-status');
+    var associationFields = {
+      fullName: document.getElementById('assoc-name'),
+      cpf: document.getElementById('assoc-cpf'),
+      crmUf: document.getElementById('assoc-crm'),
+      specialty: document.getElementById('assoc-specialty'),
+      email: document.getElementById('assoc-email'),
+      phone: document.getElementById('assoc-phone'),
+      cityUf: document.getElementById('assoc-city'),
+      availability: document.getElementById('assoc-availability')
+    };
 
     var fieldMessages = {
       name: 'Informe seu nome com pelo menos 2 caracteres.',
@@ -467,6 +479,123 @@
       });
     }
 
+    function isValidCpf(value) {
+      var digits = String(value || '').replace(/\D/g, '');
+      if (!/^\d{11}$/.test(digits) || /^(\d)\1{10}$/.test(digits)) {
+        return false;
+      }
+      var sum = 0;
+      var index;
+      for (index = 0; index < 9; index += 1) {
+        sum += Number(digits.charAt(index)) * (10 - index);
+      }
+      var firstCheck = (sum * 10) % 11;
+      if (firstCheck === 10) {
+        firstCheck = 0;
+      }
+      if (firstCheck !== Number(digits.charAt(9))) {
+        return false;
+      }
+      sum = 0;
+      for (index = 0; index < 10; index += 1) {
+        sum += Number(digits.charAt(index)) * (11 - index);
+      }
+      var secondCheck = (sum * 10) % 11;
+      if (secondCheck === 10) {
+        secondCheck = 0;
+      }
+      return secondCheck === Number(digits.charAt(10));
+    }
+
+    function isValidCrmUf(value) {
+      var uf = '(?:AC|AL|AP|AM|BA|CE|DF|ES|GO|MA|MT|MS|MG|PA|PB|PR|PE|PI|RJ|RN|RS|RO|RR|SC|SP|SE|TO)';
+      var normalized = String(value || '').trim().toUpperCase().replace(/\s+/g, ' ');
+      var prefixPattern = new RegExp('^(?:CRM\\s*[-/]?\\s*)?' + uf + '\\s*[-/]?\\s*\\d{1,8}$');
+      var suffixPattern = new RegExp('^\\d{1,8}\\s*[-/]?\\s*' + uf + '$');
+      return prefixPattern.test(normalized) || suffixPattern.test(normalized);
+    }
+
+    function isValidCityUf(value) {
+      var uf = '(AC|AL|AP|AM|BA|CE|DF|ES|GO|MA|MT|MS|MG|PA|PB|PR|PE|PI|RJ|RN|RS|RO|RR|SC|SP|SE|TO)';
+      var match = String(value || '').trim().match(new RegExp('^(.{2,})[,\\s/-]+' + uf + '$', 'i'));
+      return Boolean(match && match[1].trim().length >= 2);
+    }
+
+    function isValidAssociationPhone(value) {
+      var digits = String(value || '').replace(/\D/g, '');
+      if (digits.indexOf('55') === 0 && (digits.length === 12 || digits.length === 13)) {
+        digits = digits.slice(2);
+      }
+      return /^\d{10,11}$/.test(digits);
+    }
+
+    function validateAssociationForm() {
+      var invalidFields = [];
+      function validateField(key, isValid, message) {
+        var field = associationFields[key];
+        if (!field) {
+          return;
+        }
+        if (isValid) {
+          setFieldError(field, '');
+          return;
+        }
+        setFieldError(field, message);
+        invalidFields.push(field);
+      }
+
+      var fullName = associationFields.fullName ? associationFields.fullName.value.trim() : '';
+      var cpf = associationFields.cpf ? associationFields.cpf.value : '';
+      var crmUf = associationFields.crmUf ? associationFields.crmUf.value : '';
+      var specialty = associationFields.specialty ? associationFields.specialty.value.trim() : '';
+      var email = associationFields.email ? associationFields.email.value.trim() : '';
+      var phone = associationFields.phone ? associationFields.phone.value : '';
+      var cityUf = associationFields.cityUf ? associationFields.cityUf.value : '';
+      var availability = associationFields.availability ? associationFields.availability.value.trim() : '';
+
+      validateField('fullName', fullName.length >= 3, 'Informe seu nome completo.');
+      validateField('cpf', isValidCpf(cpf), 'Informe um CPF válido com 11 dígitos e verificadores corretos.');
+      validateField('crmUf', isValidCrmUf(crmUf), 'Informe o registro no formato CRM-UF e número, por exemplo CRM-SP 123456.');
+      validateField('specialty', specialty.length >= 2, 'Informe sua especialidade médica.');
+      validateField('email', isValidEmail(email), 'Informe um e-mail válido.');
+      validateField('phone', isValidAssociationPhone(phone), 'Informe um telefone/WhatsApp brasileiro válido.');
+      validateField('cityUf', isValidCityUf(cityUf), 'Informe a cidade e a UF, por exemplo Campinas/SP.');
+      validateField('availability', availability.length >= 4, 'Descreva seus períodos de disponibilidade.');
+
+      if (invalidFields.length > 0) {
+        setStatus(associationFormStatus, 'Revise os campos destacados. Nenhum dado foi enviado ou armazenado.');
+        if (invalidFields[0] && typeof invalidFields[0].focus === 'function') {
+          invalidFields[0].focus({ preventScroll: false });
+        }
+        return false;
+      }
+
+      setStatus(associationFormStatus, 'Os campos parecem válidos segundo a checagem local. Esta página não envia nem conclui o cadastro e não armazenou dados. Use apenas dados fictícios enquanto não houver um canal seguro.');
+      return true;
+    }
+
+    function setupAssociationForm() {
+      if (!associationForm) {
+        return;
+      }
+      Object.keys(associationFields).forEach(function (key) {
+        var field = associationFields[key];
+        if (!field) {
+          return;
+        }
+        field.addEventListener('input', function () {
+          clearFieldError(field);
+          if (associationFormStatus) {
+            associationFormStatus.textContent = '';
+          }
+        });
+      });
+      associationForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+        validateAssociationForm();
+      });
+    }
+
     function setupFaq() {
       var faqDetails = document.querySelectorAll('.faq-items details');
       faqDetails.forEach(function (detail) {
@@ -499,6 +628,7 @@
     setupWhatsAppButtons();
     setupFloatingContact();
     setupForm();
+    setupAssociationForm();
     setupFaq();
     updateYear();
   });

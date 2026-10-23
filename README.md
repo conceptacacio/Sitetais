@@ -17,6 +17,8 @@ Antes de divulgar o site, preencha os dados confirmados pela empresa no arquivo 
 
 O formulário valida os campos no navegador. Depois de configurar um WhatsApp ou e-mail válido, ele prepara a mensagem no aplicativo correspondente para a pessoa revisar e enviar. Não há backend, armazenamento de leads nem envio automático nesta versão.
 
+O formulário “Quero me associar” inclui Nome completo, CPF, CRM/UF, Especialidade médica, E-mail, Telefone/WhatsApp, Cidade/UF de atuação e Períodos de Disponibilidade. Ele valida os campos somente no navegador, mas não envia, salva ou conclui o cadastro. Use apenas dados fictícios até que a empresa configure um canal seguro e valide o aviso de privacidade.
+
 ## Estrutura
 
 - `index.html` — landing page e metadados.
