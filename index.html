@@ -1,497 +1,162 @@
 <!doctype html>
 <html lang="pt-BR">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#073f60">
-        <meta name="description" content="Interliga Saúde. Cuidar conecta pessoas. Conheça nossa proposta de cuidado, nossos valores e os canais de contato da marca.">
-        <meta name="keywords" content="Interliga Saúde, cuidado, humanização, saúde, conexão">
-        <meta property="og:type" content="website">
-        <meta property="og:site_name" content="Interliga Saúde">
-        <meta property="og:title" content="Interliga Saúde — Cuidar conecta pessoas">
-        <meta property="og:description" content="Pessoas no centro. Cuidado em cada conexão. Conheça a Interliga Saúde.">
-        <meta property="og:image" content="assets/images/interliga-logo.webp">
-        <meta name="twitter:card" content="summary">
-        <meta name="twitter:title" content="Interliga Saúde — Cuidar conecta pessoas">
-        <meta name="twitter:description" content="Pessoas no centro. Cuidado em cada conexão.">
-        <meta name="twitter:image" content="assets/images/interliga-logo.webp">
-        <title>Interliga Saúde — Cuidar conecta pessoas</title>
-        <link rel="icon" type="image/jpeg" href="assets/images/interliga-logo.webp">
-        <link rel="stylesheet" href="assets/css/style.css">
-        <script src="assets/js/config.js" defer></script>
-        <script src="assets/js/script.js" defer></script>
-    </head>
-    <body>
-        <a class="skip-link" href="#main">Pular para o conteúdo</a>
-        <svg class="icon-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <defs>
-                <symbol id="icon-arrow" viewbox="0 0 24 24">
-                    <path d="M5 12h14m-6-6 6 6-6 6"/>
-                </symbol>
-                <symbol id="icon-heart" viewbox="0 0 24 24">
-                    <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/>
-                </symbol>
-                <symbol id="icon-shield" viewbox="0 0 24 24">
-                    <path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6l8-3Z"/>
-                    <path d="m8 12 3 3 5-6"/>
-                </symbol>
-                <symbol id="icon-users" viewbox="0 0 24 24">
-                    <circle cx="9" cy="7" r="3"/>
-                    <path d="M3 21v-3a6 6 0 0 1 12 0v3m1-17a3 3 0 0 1 0 6m2 5a5 5 0 0 1 3 4v2"/>
-                </symbol>
-                <symbol id="icon-chat" viewbox="0 0 24 24">
-                    <path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5H4l-2 2V11.5a9.5 9.5 0 0 1 19 0Z"/>
-                    <path d="M7 10h9M7 14h6"/>
-                </symbol>
-                <symbol id="icon-plus" viewbox="0 0 24 24">
-                    <path d="M12 5v14M5 12h14"/>
-                </symbol>
-                <symbol id="icon-mail" viewbox="0 0 24 24">
-                    <rect x="3" y="5" width="18" height="14" rx="2"/>
-                    <path d="m3 7 9 6 9-6"/>
-                </symbol>
-                <symbol id="icon-phone" viewbox="0 0 24 24">
-                    <path d="m5 3 4 4-2 3a14 14 0 0 0 7 7l3-2 4 4c-2 5-6 3-10 0S0 6 5 3Z"/>
-                </symbol>
-                <symbol id="icon-location" viewbox="0 0 24 24">
-                    <path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"/>
-                    <circle cx="12" cy="10" r="2.5"/>
-                </symbol>
-                <symbol id="icon-link" viewbox="0 0 24 24">
-                    <path d="m10 13 4-4m-5 8-2 2a4 4 0 0 1-6-6l4-4a4 4 0 0 1 6 0m2-2 2-2a4 4 0 0 1 6 6l-4 4a4 4 0 0 1-6 0"/>
-                </symbol>
-            </defs>
-        </svg>
-        <header class="site-header">
-            <div class="container header-inner">
-                <a class="brand" href="#inicio" aria-label="Interliga Saúde — início">
-                    <img src="assets/images/interliga-logo.webp" alt="Interliga" width="108" height="108">
-                    <span class="brand-descriptor">Cuidar<br>conecta<br><span class="brand-tagline-accent">pessoas.</span></span>
-                </a>
-                <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menu de navegação" aria-controls="site-nav" aria-expanded="false">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <nav class="site-nav" id="site-nav" aria-label="Navegação principal">
-                    <a href="#sobre">Quem somos</a>
-                    <a href="#solucoes">Soluções</a>
-                    <a href="#diferenciais">Diferenciais</a>
-                    <a href="#duvidas">Dúvidas</a>
-                    <a class="nav-associate-link" href="#associar">Quero me associar</a>
-                    <a class="button button-small button-primary" href="#contato">Vamos conversar 
-                        <svg class="icon" aria-hidden="true">
-                            <use href="#icon-arrow"/>
-                        </svg>
-                    </a>
-                </nav>
-            </div>
-        </header>
-        <main id="main">
-            <section class="hero" id="inicio" aria-labelledby="hero-title" aria-describedby="hero-image-description">
-                <div class="container hero-layout">
-                    <div class="hero-copy">
-                        <p class="eyebrow"><span class="eyebrow-dot"></span> PESSOAS NO CENTRO DO CUIDADO</p>
-                        <h1 id="hero-title">Cuidar<br>conecta<br><span>pessoas</span></h1>
-                        <p class="hero-description">A saúde começa nas conexões. Entre pessoas, confiança e o compromisso de cuidar melhor.</p>
-                        <div class="hero-actions">
-                            <a class="button button-primary" href="#contato">Fale com a Interliga 
-                                <svg class="icon" aria-hidden="true">
-                                    <use href="#icon-arrow"/>
-                                </svg>
-                            </a>
-                            <a class="text-link" href="#sobre">Conheça nossa essência <span aria-hidden="true">↗</span></a>
-                        </div>
-                    </div>
-                </div>
-                <p id="hero-image-description" class="hero-image-description">Imagem ilustrativa de profissionais de saúde colaborando em uma clínica moderna.</p>
-            </section>
-            <div class="principle-strip">
-                <div class="container principle-inner">
-                    <span><svg class="icon" aria-hidden="true">
-                            <use href="#icon-heart"/>
-                        </svg> Cuidado humanizado</span>
-                    <span><svg class="icon" aria-hidden="true">
-                            <use href="#icon-shield"/>
-                        </svg> Confiança em cada relação</span>
-                    <span><svg class="icon" aria-hidden="true">
-                            <use href="#icon-users"/>
-                        </svg> Pessoas conectadas</span>
-                </div>
-            </div>
-            <section class="section about" id="sobre" aria-labelledby="about-title">
-                <div class="container about-layout">
-                    <div class="about-heading">
-                        <p class="eyebrow">QUEM SOMOS</p>
-                        <h2 id="about-title">Conectar é o primeiro<br>passo para <span class="teal-text">cuidar</span></h2>
-                    </div>
-                    <div class="about-copy">
-                        <p class="lead">Na Interliga, nós conectamos a gestão eficiente da saúde ao cuidado humano de verdade. Somos uma empresa especializada na gestão e alocação de médicos para unidades de saúde, atuando como parceiro estratégico de Hospitais, UPA e Clínicas de Família que buscam atendimento de excelência operacional e assistencial.</p>
-                        <p id="institution-description">Nossa missão é garantir que cada unidade de saúde conte com profissionais qualificados, comprometidos e prontos para oferecer o melhor atendimento ao paciente.</p>
-                    </div>
-                    <figure class="about-image">
-                        <img src="assets/images/conectar.jpg" alt="Pessoa em ambiente de trabalho, falando ao telefone diante de um computador." width="612" height="395" loading="lazy" decoding="async">
-                    </figure>
-                </div>
-            </section>
-            <section class="section solutions" id="solucoes" aria-labelledby="solutions-title">
-                <div class="container">
-                    <div class="solutions-layout">
-                        <figure class="solutions-image">
-                            <div class="solutions-image-frame">
-                                <img class="solutions-feature-image" src="assets/images/doodle-group-meeting.webp" alt="Pessoas reunidas ao redor de uma mesa, conversando diante de documentos e computadores. Imagem ilustrativa." width="1460" height="820" loading="lazy" decoding="async">
-                            </div>
-                            <figcaption class="solutions-image-caption">
-                                <span class="solutions-feature-copy">Reunião de equipe</span>
-                            </figcaption>
-                        </figure>
-                        <div class="solutions-content">
-                            <p class="eyebrow">NOSSAS SOLUÇÕES</p>
-                            <h2 id="solutions-title">O cuidado tem<br><span class="teal-text">muitas conexões</span></h2>
-                            <div class="solution-list" id="solutions-list">
-                                <article class="solution-item">
-                                    <span class="solution-item-number" aria-hidden="true">01</span>
-                                    <div>
-                                        <h3>Gestão de escalas assistenciais</h3>
-                                        <p>Planejamento e acompanhamento de escalas médicas e multidisciplinares, com atenção à cobertura de plantões e à continuidade dos serviços.</p>
-                                        <a href="#contato" class="card-link">Consultar informações 
-                                            <svg class="icon" aria-hidden="true">
-                                                <use href="#icon-arrow"/>
-                                            </svg>
-                                        </a>
-                                    </div>
-                                </article>
-                                <article class="solution-item">
-                                    <span class="solution-item-number" aria-hidden="true">02</span>
-                                    <div>
-                                        <h3>Organização de equipes</h3>
-                                        <p>Organização de equipes de enfermagem e de outros profissionais assistenciais, conforme a necessidade de cada instituição.</p>
-                                        <a href="#contato" class="card-link">Consultar informações 
-                                            <svg class="icon" aria-hidden="true">
-                                                <use href="#icon-arrow"/>
-                                            </svg>
-                                        </a>
-                                    </div>
-                                </article>
-                                <article class="solution-item">
-                                    <span class="solution-item-number" aria-hidden="true">03</span>
-                                    <div>
-                                        <h3>Apoio à reposição de profissionais</h3>
-                                        <p>Apoio em situações de ausência ou aumento de demanda, buscando reduzir impactos na rotina da unidade.</p>
-                                        <a href="#contato" class="card-link">Consultar informações 
-                                            <svg class="icon" aria-hidden="true">
-                                                <use href="#icon-arrow"/>
-                                            </svg>
-                                        </a>
-                                    </div>
-                                </article>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="section process" id="como-funciona" aria-labelledby="process-title">
-                <div class="container">
-                    <div class="compact-heading">
-                        <p class="eyebrow">COMO FUNCIONA</p>
-                        <h2 id="process-title">Uma boa conexão começa<br>com uma boa conversa</h2>
-                        <p>Fluxo de contato proposto, sujeito à validação da empresa.</p>
-                    </div>
-                    <div class="steps">
-                        <article>
-                            <span class="step-number">01</span>
-                            <h3>Conte sua necessidade</h3>
-                            <p>Compartilhe uma apresentação breve do que você procura, sem dados sensíveis.</p>
-                        </article>
-                        <article>
-                            <span class="step-number">02</span>
-                            <h3>Vamos entender juntos</h3>
-                            <p>O canal oficial permitirá conversar sobre informações e possibilidades de atendimento.</p>
-                        </article>
-                        <article>
-                            <span class="step-number">03</span>
-                            <h3>Definimos o próximo passo</h3>
-                            <p>Escopo, condições e disponibilidade serão confirmados diretamente pela empresa.</p>
-                        </article>
-                    </div>
-                </div>
-            </section>
-            <section class="section differences" id="diferenciais" aria-labelledby="differences-title">
-                <div class="container">
-                    <div class="section-heading">
-                        <div>
-                            <p class="eyebrow">O QUE NOS INSPIRA</p>
-                            <h2 id="differences-title">Pessoas importam.<br><span class="teal-text">Cada conexão também</span></h2>
-                        </div>
-                        <p>Princípios que propomos para orientar a comunicação da Interliga Saúde.</p>
-                    </div>
-                    <div class="values">
-                        <article>
-                            <svg class="icon" aria-hidden="true">
-                                <use href="#icon-heart"/>
-                            </svg>
-                            <h3>Humanização</h3>
-                            <p>Ouvir com atenção.<br>Respeitar cada pessoa.</p>
-                        </article>
-                        <article>
-                            <svg class="icon" aria-hidden="true">
-                                <use href="#icon-shield"/>
-                            </svg>
-                            <h3>Confiança</h3>
-                            <p>Clareza nas informações.<br>Responsabilidade nas relações.</p>
-                        </article>
-                        <article>
-                            <svg class="icon" aria-hidden="true">
-                                <use href="#icon-users"/>
-                            </svg>
-                            <h3>Colaboração</h3>
-                            <p>Aproximar pessoas.<br>Valorizar o trabalho em equipe.</p>
-                        </article>
-                        <article>
-                            <svg class="icon" aria-hidden="true">
-                                <use href="#icon-link"/>
-                            </svg>
-                            <h3>Eficiência</h3>
-                            <p>Simplificar conexões.<br>Dar atenção ao que importa.</p>
-                        </article>
-                    </div>
-                    <p class="section-note">Qualidade é um princípio editorial, não uma declaração de certificação ou resultado.</p>
-                </div>
-            </section>
-            <section class="commitment" aria-labelledby="commitment-title">
-                <div class="container commitment-inner">
-                    <div class="commitment-mark">
-                        <svg class="icon" aria-hidden="true">
-                            <use href="#icon-heart"/>
-                        </svg>
-                    </div>
-                    <div>
-                        <p class="eyebrow">NOSSO COMPROMISSO</p>
-                        <h2 id="commitment-title">Por trás de cada cuidado,<br>existe uma pessoa</h2>
-                        <p>É por ela que a conexão faz sentido. A mensagem da Interliga Saúde nasce desse olhar: acolher, aproximar e valorizar pessoas.</p>
-                    </div>
-                    <a class="button button-white" href="#contato">Vamos nos conectar 
-                        <svg class="icon" aria-hidden="true">
-                            <use href="#icon-arrow"/>
-                        </svg>
-                    </a>
-                </div>
-            </section>
-            <section class="section contact" id="contato" aria-labelledby="contact-title">
-                <div class="container contact-layout">
-                    <div class="contact-copy">
-                        <p class="eyebrow">VAMOS CONVERSAR</p>
-                        <h2 id="contact-title">Vamos criar<br>uma nova <span class="teal-text">conexão?</span></h2>
-                        <p class="contact-lead">Conte o que você precisa. O primeiro passo pode ser uma conversa.</p>
-                        <div class="contact-info">
-                            <div>
-                                <svg class="icon" aria-hidden="true">
-                                    <use href="#icon-phone"/>
-                                </svg>
-                                <div>
-                                    <span>TELEFONE</span>
-                                    <p id="contact-phone">021 98290-6043</p>
-                                </div>
-                            </div>
-                        </div>
-                        <button class="button button-outline" id="whatsapp-contact" type="button">
-                            <svg class="icon" aria-hidden="true">
-                                <use href="#icon-chat"/>
-                            </svg>                             Conversar pelo WhatsApp 
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#073f60">
+  <meta name="description" content="Interliga Saúde. Cuidar conecta pessoas. Conheça nossa proposta de cuidado, nossos valores e os canais de contato da marca.">
+  <meta name="keywords" content="Interliga Saúde, cuidado, humanização, saúde, conexão">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Interliga Saúde">
+  <meta property="og:title" content="Interliga Saúde — Cuidar conecta pessoas">
+  <meta property="og:description" content="Pessoas no centro. Cuidado em cada conexão. Conheça a Interliga Saúde.">
+  <meta property="og:image" content="assets/images/interliga-logo.webp">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Interliga Saúde — Cuidar conecta pessoas">
+  <meta name="twitter:description" content="Pessoas no centro. Cuidado em cada conexão.">
+  <meta name="twitter:image" content="assets/images/interliga-logo.webp">
+  <title>Interliga Saúde — Cuidar conecta pessoas</title>
+  <link rel="icon" type="image/jpeg" href="assets/images/interliga-logo.webp">
 
-                            <svg class="icon" aria-hidden="true">
-                                <use href="#icon-arrow"/>
-                            </svg>
-                        </button>
-                        <p class="channel-note">WhatsApp: 021 98290-6043.</p>
-                        <p id="channel-status" class="channel-status" role="status" aria-live="polite"></p>
-                    </div>
-                    <div class="form-panel">
-                        <div class="form-heading">
-                            <h3>Qual é a sua necessidade?</h3>
-                            <p>Preencha os campos para enviar sua mensagem.</p>
-                        </div>
-                        <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
-                            <div class="form-row">
-                                <div class="form-field">
-                                    <label for="name">Seu nome 
-                                        <span aria-hidden="true">*</span>
-                                    </label>
-                                    <input id="name" name="name" type="text" required minlength="2" maxlength="100" autocomplete="name" placeholder="Como podemos chamar você?" aria-describedby="name-error">
-                                    <p id="name-error" class="field-error"></p>
-                                </div>
-                                <div class="form-field">
-                                    <label for="email">E-mail 
-                                        <span aria-hidden="true">*</span>
-                                    </label>
-                                    <input id="email" name="email" type="email" required maxlength="254" autocomplete="email" placeholder="seu@email.com" aria-describedby="email-error">
-                                    <p id="email-error" class="field-error"></p>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-field">
-                                    <label for="phone">Telefone 
-                                        <span class="optional">(opcional)</span>
-                                    </label>
-                                    <input id="phone" name="phone" type="tel" maxlength="22" autocomplete="tel" placeholder="(00) 00000-0000" aria-describedby="phone-error">
-                                    <p id="phone-error" class="field-error"></p>
-                                </div>
-                                <div class="form-field">
-                                    <label for="organization">Instituição 
-                                        <span class="optional">(opcional)</span>
-                                    </label>
-                                    <input id="organization" name="institution" type="text" maxlength="150" autocomplete="organization" placeholder="Nome da sua instituição" aria-describedby="organization-error">
-                                    <p id="organization-error" class="field-error"></p>
-                                </div>
-                            </div>
-                            <div class="form-field">
-                                <label for="message">Sua mensagem 
-                                    <span aria-hidden="true">*</span>
-                                </label>
-                                <textarea id="message" name="message" required minlength="10" maxlength="2000" rows="4" placeholder="Conte brevemente o que você procura. Não inclua dados de pacientes ou informações sensíveis." aria-describedby="message-error"></textarea>
-                                <p id="message-error" class="field-error"></p>
-                            </div>
-                            <div class="honeypot" aria-hidden="true">
-                                <label for="website">Não preencha este campo</label>
-                                <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
-                            </div>
-                            <label class="consent-label" for="consent">
-                                <input type="checkbox" id="consent" name="consent" required aria-describedby="consent-error">
-                                <span>Concordo com o uso dos dados para responder à minha solicitação, conforme o <a href="privacy.html">aviso de privacidade</a>. <span aria-hidden="true">*</span></span>
-                            </label>
-                            <p id="consent-error" class="field-error"></p>
-                            <button class="button button-primary form-submit" id="send-message" type="submit">Enviar 
-                                <svg class="icon" aria-hidden="true">
-                                    <use href="#icon-arrow"/>
-                                </svg>
-                            </button>
-                            <p class="form-disclaimer"><svg class="icon" aria-hidden="true">
-                                    <use href="#icon-shield"/>
-                                </svg> Sua mensagem será encaminhada pelo Web3Forms ao e-mail de atendimento configurado. Não inclua dados de pacientes ou informações sensíveis.</p>
-                            <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
-                        </form>
-                    </div>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/config.js" defer></script>
+  <script src="assets/js/script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+  <svg class="icon-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="icon-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
+    <symbol id="icon-shield" viewBox="0 0 24 24"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6l8-3Z"/><path d="m8 12 3 3 5-6"/></symbol>
+    <symbol id="icon-users" viewBox="0 0 24 24"><circle cx="9" cy="7" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3m1-17a3 3 0 0 1 0 6m2 5a5 5 0 0 1 3 4v2"/></symbol>
+    <symbol id="icon-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5H4l-2 2V11.5a9.5 9.5 0 0 1 19 0Z"/><path d="M7 10h9M7 14h6"/></symbol>
+    <symbol id="icon-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="icon-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+    <symbol id="icon-phone" viewBox="0 0 24 24"><path d="m5 3 4 4-2 3a14 14 0 0 0 7 7l3-2 4 4c-2 5-6 3-10 0S0 6 5 3Z"/></symbol>
+    <symbol id="icon-location" viewBox="0 0 24 24"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="icon-link" viewBox="0 0 24 24"><path d="m10 13 4-4m-5 8-2 2a4 4 0 0 1-6-6l4-4a4 4 0 0 1 6 0m2-2 2-2a4 4 0 0 1 6 6l-4 4a4 4 0 0 1-6 0"/></symbol>
+  </defs></svg>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#inicio" aria-label="Interliga Saúde — início"><img src="assets/images/interliga-logo.webp" alt="Interliga" width="108" height="108"><span class="brand-descriptor">Cuidar<br>conecta<br><span class="brand-tagline-accent">pessoas.</span></span></a>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menu de navegação" aria-controls="site-nav" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="site-nav" id="site-nav" aria-label="Navegação principal">
+        <a href="#sobre">Quem somos</a><a href="#solucoes">Soluções</a><a href="#diferenciais">Diferenciais</a><a href="#duvidas">Dúvidas</a><a class="nav-associate-link" href="#associar">Quero me associar</a>
+        <a class="button button-small button-primary" href="#contato">Vamos conversar <svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero" id="inicio" aria-labelledby="hero-title" aria-describedby="hero-image-description">
+      <div class="container hero-layout">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> PESSOAS NO CENTRO DO CUIDADO</p>
+          <h1 id="hero-title">Cuidar<br>conecta<br><span>pessoas</span></h1>
+          <p class="hero-description">A saúde começa nas conexões. Entre pessoas, confiança e o compromisso de cuidar melhor.</p>
+          <div class="hero-actions"><a class="button button-primary" href="#contato">Fale com a Interliga <svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></a><a class="text-link" href="#sobre">Conheça nossa essência <span aria-hidden="true">↗</span></a></div>
+
+        </div>
+
+      </div>
+
+      <p id="hero-image-description" class="hero-image-description">Imagem ilustrativa de profissionais de saúde colaborando em uma clínica moderna.</p>
+    </section>
+    <div class="principle-strip"><div class="container principle-inner"><span><svg class="icon" aria-hidden="true"><use href="#icon-heart"/></svg> Cuidado humanizado</span><span><svg class="icon" aria-hidden="true"><use href="#icon-shield"/></svg> Confiança em cada relação</span><span><svg class="icon" aria-hidden="true"><use href="#icon-users"/></svg> Pessoas conectadas</span></div></div>
+    <section class="section about" id="sobre" aria-labelledby="about-title">
+      <div class="container about-layout">
+        <div class="about-heading"><p class="eyebrow">QUEM SOMOS</p><h2 id="about-title">Conectar é o primeiro<br>passo para <span class="teal-text">cuidar</span></h2></div>
+        <div class="about-copy"><p class="lead">Na Interliga, nós conectamos a gestão eficiente da saúde ao cuidado humano de verdade. Somos uma empresa especializada na gestão e alocação de médicos para unidades de saúde, atuando como parceiro estratégico de Hospitais, UPA e Clínicas de Família que buscam atendimento de excelência operacional e assistencial.</p><p id="institution-description">Nossa missão é garantir que cada unidade de saúde conte com profissionais qualificados, comprometidos e prontos para oferecer o melhor atendimento ao paciente.</p></div>
+        <figure class="about-image"><img src="assets/images/conectar.jpg" alt="Pessoa em ambiente de trabalho, falando ao telefone diante de um computador." width="612" height="395" loading="lazy" decoding="async"></figure>
+      </div>
+    </section>
+    <section class="section solutions" id="solucoes" aria-labelledby="solutions-title">
+      <div class="container">
+        <div class="solutions-layout">
+          <figure class="solutions-image">
+            <div class="solutions-image-frame">
+              <img class="solutions-feature-image" src="assets/images/doodle-group-meeting.webp" alt="Pessoas reunidas ao redor de uma mesa, conversando diante de documentos e computadores. Imagem ilustrativa." width="1460" height="820" loading="lazy" decoding="async">
+            </div>
+            <figcaption class="solutions-image-caption">
+              <span class="solutions-feature-copy">Reunião de equipe</span>
+            </figcaption>
+          </figure>
+          <div class="solutions-content">
+            <p class="eyebrow">NOSSAS SOLUÇÕES</p>
+            <h2 id="solutions-title">O cuidado tem<br><span class="teal-text">muitas conexões</span></h2>
+            <div class="solution-list" id="solutions-list">
+              <article class="solution-item">
+                <span class="solution-item-number" aria-hidden="true">01</span>
+                <div><h3>Gestão de escalas assistenciais</h3><p>Planejamento e acompanhamento de escalas médicas e multidisciplinares, com atenção à cobertura de plantões e à continuidade dos serviços.</p><a href="#contato" class="card-link">Consultar informações <svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></a></div>
+              </article>
+              <article class="solution-item">
+                <span class="solution-item-number" aria-hidden="true">02</span>
+                <div><h3>Organização de equipes</h3><p>Organização de equipes de enfermagem e de outros profissionais assistenciais, conforme a necessidade de cada instituição.</p><a href="#contato" class="card-link">Consultar informações <svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></a></div>
+              </article>
+              <article class="solution-item">
+                <span class="solution-item-number" aria-hidden="true">03</span>
+                <div><h3>Apoio à reposição de profissionais</h3><p>Apoio em situações de ausência ou aumento de demanda, buscando reduzir impactos na rotina da unidade.</p><a href="#contato" class="card-link">Consultar informações <svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></a></div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section process" id="como-funciona" aria-labelledby="process-title"><div class="container"><div class="compact-heading"><p class="eyebrow">COMO FUNCIONA</p><h2 id="process-title">Uma boa conexão começa<br>com uma boa conversa</h2><p>Fluxo de contato proposto, sujeito à validação da empresa.</p></div><div class="steps"><article><span class="step-number">01</span><h3>Conte sua necessidade</h3><p>Compartilhe uma apresentação breve do que você procura, sem dados sensíveis.</p></article><article><span class="step-number">02</span><h3>Vamos entender juntos</h3><p>O canal oficial permitirá conversar sobre informações e possibilidades de atendimento.</p></article><article><span class="step-number">03</span><h3>Definimos o próximo passo</h3><p>Escopo, condições e disponibilidade serão confirmados diretamente pela empresa.</p></article></div></div></section>
+    <section class="section differences" id="diferenciais" aria-labelledby="differences-title"><div class="container"><div class="section-heading"><div><p class="eyebrow">O QUE NOS INSPIRA</p><h2 id="differences-title">Pessoas importam.<br><span class="teal-text">Cada conexão também</span></h2></div><p>Princípios que propomos para orientar a comunicação da Interliga Saúde.</p></div><div class="values"><article><svg class="icon" aria-hidden="true"><use href="#icon-heart"/></svg><h3>Humanização</h3><p>Ouvir com atenção.<br>Respeitar cada pessoa.</p></article><article><svg class="icon" aria-hidden="true"><use href="#icon-shield"/></svg><h3>Confiança</h3><p>Clareza nas informações.<br>Responsabilidade nas relações.</p></article><article><svg class="icon" aria-hidden="true"><use href="#icon-users"/></svg><h3>Colaboração</h3><p>Aproximar pessoas.<br>Valorizar o trabalho em equipe.</p></article><article><svg class="icon" aria-hidden="true"><use href="#icon-link"/></svg><h3>Eficiência</h3><p>Simplificar conexões.<br>Dar atenção ao que importa.</p></article></div><p class="section-note">Qualidade é um princípio editorial, não uma declaração de certificação ou resultado.</p></div></section>
+    <section class="commitment" aria-labelledby="commitment-title"><div class="container commitment-inner"><div class="commitment-mark"><svg class="icon" aria-hidden="true"><use href="#icon-heart"/></svg></div><div><p class="eyebrow">NOSSO COMPROMISSO</p><h2 id="commitment-title">Por trás de cada cuidado,<br>existe uma pessoa</h2><p>É por ela que a conexão faz sentido. A mensagem da Interliga Saúde nasce desse olhar: acolher, aproximar e valorizar pessoas.</p></div><a class="button button-white" href="#contato">Vamos nos conectar <svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></a></div></section>
+    <section class="section faq" id="duvidas" aria-labelledby="faq-title"><div class="container faq-layout"><div class="faq-intro"><p class="eyebrow">PERGUNTAS FREQUENTES</p><h2 id="faq-title">Vamos esclarecer<br>suas <span class="teal-text">dúvidas</span></h2><p>Informações objetivas para começar a conversa com transparência.</p><a class="text-link" href="#contato">Tenho outra pergunta <svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></a></div><div class="faq-items"><details><summary>Quais serviços a Interliga Saúde oferece?<svg class="icon" aria-hidden="true"><use href="#icon-plus"/></svg></summary><p>O portfólio oficial ainda não foi informado para esta versão do site. A seção de soluções está pronta para receber os serviços confirmados pela empresa, sem apresentar ofertas não verificadas.</p></details><details><summary>Como posso entrar em contato?<svg class="icon" aria-hidden="true"><use href="#icon-plus"/></svg></summary><p>Use o botão do WhatsApp para conversar pelo número 021 98290-6043 ou envie sua mensagem pelo formulário. O contato será encaminhado ao e-mail de atendimento configurado pela Interliga Saúde.</p></details><details><summary>Onde a empresa atua?<svg class="icon" aria-hidden="true"><use href="#icon-plus"/></svg></summary><p>Localidades, modalidades e abrangência de atendimento aguardam confirmação. Nenhuma região é apresentada como atendida nesta versão.</p></details><details><summary>Quais instituições são atendidas?<svg class="icon" aria-hidden="true"><use href="#icon-plus"/></svg></summary><p>A relação de instituições e clientes ainda não foi fornecida. Nomes e marcas só serão divulgados depois da confirmação da empresa e da autorização para uso.</p></details></div></div></section>
+    <section class="institutions"><div class="container institutions-inner"><p class="eyebrow">INSTITUIÇÕES E CLIENTES</p><p>Conexões reais merecem informações reais.</p><span>Relação de clientes e autorizações de divulgação a preencher.</span></div></section>
+    <section class="section contact" id="contato" aria-labelledby="contact-title"><div class="container contact-layout"><div class="contact-copy"><p class="eyebrow">VAMOS CONVERSAR</p><h2 id="contact-title">Vamos criar<br>uma nova <span class="teal-text">conexão?</span></h2><p class="contact-lead">Conte o que você precisa. O primeiro passo pode ser uma conversa.</p><div class="contact-info"><div><svg class="icon" aria-hidden="true"><use href="#icon-phone"/></svg><div><span>TELEFONE</span><p id="contact-phone">021 98290-6043</p></div></div></div><button class="button button-outline" id="whatsapp-contact" type="button"><svg class="icon" aria-hidden="true"><use href="#icon-chat"/></svg> Conversar pelo WhatsApp <svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></button><p class="channel-note">WhatsApp: 021 98290-6043.</p><p id="channel-status" class="channel-status" role="status" aria-live="polite"></p></div><div class="form-panel"><div class="form-heading"><h3>Qual é a sua necessidade?</h3><p>Preencha os campos para enviar sua mensagem.</p></div><form id="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate><div class="form-row"><div class="form-field"><label for="name">Seu nome <span aria-hidden="true">*</span></label><input id="name" name="name" type="text" required minlength="2" maxlength="100" autocomplete="name" placeholder="Como podemos chamar você?" aria-describedby="name-error"><p id="name-error" class="field-error"></p></div><div class="form-field"><label for="email">E-mail <span aria-hidden="true">*</span></label><input id="email" name="email" type="email" required maxlength="254" autocomplete="email" placeholder="seu@email.com" aria-describedby="email-error"><p id="email-error" class="field-error"></p></div></div><div class="form-row"><div class="form-field"><label for="phone">Telefone <span class="optional">(opcional)</span></label><input id="phone" name="phone" type="tel" maxlength="22" autocomplete="tel" placeholder="(00) 00000-0000" aria-describedby="phone-error"><p id="phone-error" class="field-error"></p></div><div class="form-field"><label for="organization">Instituição <span class="optional">(opcional)</span></label><input id="organization" name="institution" type="text" maxlength="150" autocomplete="organization" placeholder="Nome da sua instituição" aria-describedby="organization-error"><p id="organization-error" class="field-error"></p></div></div><div class="form-field"><label for="message">Sua mensagem <span aria-hidden="true">*</span></label><textarea id="message" name="message" required minlength="10" maxlength="2000" rows="4" placeholder="Conte brevemente o que você procura. Não inclua dados de pacientes ou informações sensíveis." aria-describedby="message-error"></textarea><p id="message-error" class="field-error"></p></div><div class="honeypot" aria-hidden="true"><label for="website">Não preencha este campo</label><input type="text" id="website" name="website" tabindex="-1" autocomplete="off"></div><label class="consent-label" for="consent"><input type="checkbox" id="consent" name="consent" required aria-describedby="consent-error"><span>Concordo com o uso dos dados para responder à minha solicitação, conforme o <a href="privacy.html">aviso de privacidade</a>. <span aria-hidden="true">*</span></span></label><p id="consent-error" class="field-error"></p><button class="button button-primary form-submit" id="send-message" type="submit">Enviar <svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></button><p class="form-disclaimer"><svg class="icon" aria-hidden="true"><use href="#icon-shield"/></svg> Sua mensagem será encaminhada pelo Web3Forms ao e-mail de atendimento configurado. Não inclua dados de pacientes ou informações sensíveis.</p><p id="form-status" class="form-status" role="status" aria-live="polite"></p></form></div></div></section>
+    <section class="section association" id="associar" aria-labelledby="association-title">
+      <div class="container">
+        <div class="association-heading">
+          <div>
+            <p class="eyebrow">PARA MÉDICAS E MÉDICOS</p>
+            <h2 id="association-title">Quero me associar</h2>
+            <p class="association-intro-copy">Demonstre seu interesse em se conectar à Interliga Saúde e conheça as próximas etapas de associação.</p>
+          </div>
+        </div>
+        <div class="association-card">
+          <div class="association-card-heading">
+            <div class="icon-box"><svg class="icon" aria-hidden="true"><use href="#icon-users"/></svg></div>
+            <div><h3>Formulário de interesse</h3><p>Preencha os campos abaixo para informar seu interesse.</p></div>
+          </div>
+          <form class="association-form" id="association-form" novalidate>
+            <fieldset class="association-fields">
+              <legend class="association-legend">Dados para associação</legend>
+              <div class="association-groups">
+                <div class="association-group association-group--contact" role="group" aria-labelledby="association-contact-title">
+                  <h4 id="association-contact-title">Dados pessoais e contato</h4>
+                  <div class="association-field-grid association-field-grid--contact">
+                    <div class="form-field association-field"><label for="assoc-name">Nome completo <span aria-hidden="true">*</span></label><input id="assoc-name" name="fullName" type="text" required minlength="3" maxlength="120" autocomplete="name" placeholder="Seu nome completo" aria-describedby="assoc-name-error"><p id="assoc-name-error" class="field-error"></p></div>
+                    <div class="form-field association-field"><label for="assoc-email">E-mail <span aria-hidden="true">*</span></label><input id="assoc-email" name="email" type="email" required maxlength="254" autocomplete="email" placeholder="seu@email.com" aria-describedby="assoc-email-error"><p id="assoc-email-error" class="field-error"></p></div>
+                    <div class="form-field association-field"><label for="assoc-phone">Telefone/WhatsApp <span aria-hidden="true">*</span></label><input id="assoc-phone" name="phone" type="tel" required maxlength="22" autocomplete="tel" placeholder="(00) 00000-0000" aria-describedby="assoc-phone-error"><p id="assoc-phone-error" class="field-error"></p></div>
+                  </div>
                 </div>
-            </section>
-            <section class="section association" id="associar" aria-labelledby="association-title">
-                <div class="container">
-                    <div class="association-heading">
-                        <div>
-                            <p class="eyebrow">PARA MÉDICAS E MÉDICOS</p>
-                            <h2 id="association-title">Quero me associar</h2>
-                            <p class="association-intro-copy">Demonstre seu interesse em se conectar à Interliga Saúde e conheça as próximas etapas de associação.</p>
-                        </div>
-                    </div>
-                    <div class="association-card">
-                        <div class="association-card-heading">
-                            <div class="icon-box">
-                                <svg class="icon" aria-hidden="true">
-                                    <use href="#icon-users"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <h3>Formulário de interesse</h3>
-                                <p>Preencha os campos abaixo para informar seu interesse.</p>
-                            </div>
-                        </div>
-                        <form class="association-form" id="association-form" novalidate>
-                            <fieldset class="association-fields">
-                                <legend class="association-legend">Dados para associação</legend>
-                                <div class="association-groups">
-                                    <div class="association-group association-group--contact" role="group" aria-labelledby="association-contact-title">
-                                        <h4 id="association-contact-title">Dados pessoais e contato</h4>
-                                        <div class="association-field-grid association-field-grid--contact">
-                                            <div class="form-field association-field">
-                                                <label for="assoc-name">Nome completo 
-                                                    <span aria-hidden="true">*</span>
-                                                </label>
-                                                <input id="assoc-name" name="fullName" type="text" required minlength="3" maxlength="120" autocomplete="name" placeholder="Seu nome completo" aria-describedby="assoc-name-error">
-                                                <p id="assoc-name-error" class="field-error"></p>
-                                            </div>
-                                            <div class="form-field association-field">
-                                                <label for="assoc-email">E-mail 
-                                                    <span aria-hidden="true">*</span>
-                                                </label>
-                                                <input id="assoc-email" name="email" type="email" required maxlength="254" autocomplete="email" placeholder="seu@email.com" aria-describedby="assoc-email-error">
-                                                <p id="assoc-email-error" class="field-error"></p>
-                                            </div>
-                                            <div class="form-field association-field">
-                                                <label for="assoc-phone">Telefone/WhatsApp 
-                                                    <span aria-hidden="true">*</span>
-                                                </label>
-                                                <input id="assoc-phone" name="phone" type="tel" required maxlength="22" autocomplete="tel" placeholder="(00) 00000-0000" aria-describedby="assoc-phone-error">
-                                                <p id="assoc-phone-error" class="field-error"></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="association-group association-group--professional" role="group" aria-labelledby="association-professional-title">
-                                        <h4 id="association-professional-title">Registro e atuação</h4>
-                                        <div class="association-field-grid">
-                                            <div class="form-field association-field">
-                                                <label for="assoc-cpf">CPF 
-                                                    <span aria-hidden="true">*</span>
-                                                </label>
-                                                <input id="assoc-cpf" name="cpf" type="text" required inputmode="numeric" maxlength="14" autocomplete="off" placeholder="000.000.000-00" aria-describedby="assoc-cpf-error">
-                                                <p id="assoc-cpf-error" class="field-error"></p>
-                                            </div>
-                                            <div class="form-field association-field">
-                                                <label for="assoc-crm">CRM/UF 
-                                                    <span aria-hidden="true">*</span>
-                                                </label>
-                                                <input id="assoc-crm" name="crmUf" type="text" required maxlength="24" autocomplete="off" placeholder="CRM-SP 123456" aria-describedby="assoc-crm-error">
-                                                <p id="assoc-crm-error" class="field-error"></p>
-                                            </div>
-                                            <div class="form-field association-field">
-                                                <label for="assoc-specialty">Especialidade médica 
-                                                    <span aria-hidden="true">*</span>
-                                                </label>
-                                                <input id="assoc-specialty" name="specialty" type="text" required maxlength="120" autocomplete="organization-title" placeholder="Sua especialidade" aria-describedby="assoc-specialty-error">
-                                                <p id="assoc-specialty-error" class="field-error"></p>
-                                            </div>
-                                            <div class="form-field association-field">
-                                                <label for="assoc-city">Cidade/UF de atuação 
-                                                    <span aria-hidden="true">*</span>
-                                                </label>
-                                                <input id="assoc-city" name="cityUf" type="text" required maxlength="100" autocomplete="address-level2" placeholder="Ex.: Campinas/SP" aria-describedby="assoc-city-error">
-                                                <p id="assoc-city-error" class="field-error"></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="association-group association-group--availability" role="group" aria-labelledby="association-availability-title">
-                                        <h4 id="association-availability-title">Disponibilidade</h4>
-                                        <div class="form-field association-field">
-                                            <label for="assoc-availability">Períodos de Disponibilidade 
-                                                <span aria-hidden="true">*</span>
-                                            </label>
-                                            <textarea id="assoc-availability" name="availability" required minlength="4" maxlength="500" rows="3" placeholder="Informe os dias e horários em que tem disponibilidade." aria-describedby="assoc-availability-error"></textarea>
-                                            <p id="assoc-availability-error" class="field-error"></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </fieldset>
-                            <button class="button button-primary association-submit" id="association-submit" type="submit">Enviar 
-                                <svg class="icon" aria-hidden="true">
-                                    <use href="#icon-arrow"/>
-                                </svg>
-                            </button>
-                            <p class="form-disclaimer"><svg class="icon" aria-hidden="true">
-                                    <use href="#icon-shield"/>
-                                </svg> Esta página valida os campos, mas não envia nem armazena os dados. Use apenas dados fictícios até que um canal seguro de recebimento seja configurado.</p>
-                            <p id="association-form-status" class="form-status" role="status" aria-live="polite"></p>
-                        </form>
-                    </div>
+                <div class="association-group association-group--professional" role="group" aria-labelledby="association-professional-title">
+                  <h4 id="association-professional-title">Registro e atuação</h4>
+                  <div class="association-field-grid">
+                    <div class="form-field association-field"><label for="assoc-cpf">CPF <span aria-hidden="true">*</span></label><input id="assoc-cpf" name="cpf" type="text" required inputmode="numeric" maxlength="14" autocomplete="off" placeholder="000.000.000-00" aria-describedby="assoc-cpf-error"><p id="assoc-cpf-error" class="field-error"></p></div>
+                    <div class="form-field association-field"><label for="assoc-crm">CRM/UF <span aria-hidden="true">*</span></label><input id="assoc-crm" name="crmUf" type="text" required maxlength="24" autocomplete="off" placeholder="CRM-SP 123456" aria-describedby="assoc-crm-error"><p id="assoc-crm-error" class="field-error"></p></div>
+                    <div class="form-field association-field"><label for="assoc-specialty">Especialidade médica <span aria-hidden="true">*</span></label><input id="assoc-specialty" name="specialty" type="text" required maxlength="120" autocomplete="organization-title" placeholder="Sua especialidade" aria-describedby="assoc-specialty-error"><p id="assoc-specialty-error" class="field-error"></p></div>
+                    <div class="form-field association-field"><label for="assoc-city">Cidade/UF de atuação <span aria-hidden="true">*</span></label><input id="assoc-city" name="cityUf" type="text" required maxlength="100" autocomplete="address-level2" placeholder="Ex.: Campinas/SP" aria-describedby="assoc-city-error"><p id="assoc-city-error" class="field-error"></p></div>
+                  </div>
                 </div>
-            </section>
-        </main>
-        <a class="association-floating" href="#associar" aria-label="Quero me associar" title="Quero me associar">
-            <svg class="icon" aria-hidden="true">
-                <use href="#icon-users"/>
-            </svg>
-        </a>
-        <button class="whatsapp-floating" id="whatsapp-floating" type="button" aria-label="Abrir WhatsApp para 021 98290-6043">
-            <svg class="icon" aria-hidden="true">
-                <use href="#icon-chat"/>
-            </svg>
-        </button>
-    </body>
+                <div class="association-group association-group--availability" role="group" aria-labelledby="association-availability-title">
+                  <h4 id="association-availability-title">Disponibilidade</h4>
+                  <div class="form-field association-field"><label for="assoc-availability">Períodos de Disponibilidade <span aria-hidden="true">*</span></label><textarea id="assoc-availability" name="availability" required minlength="4" maxlength="500" rows="3" placeholder="Informe os dias e horários em que tem disponibilidade." aria-describedby="assoc-availability-error"></textarea><p id="assoc-availability-error" class="field-error"></p></div>
+                </div>
+              </div>
+            </fieldset>
+            <button class="button button-primary association-submit" id="association-submit" type="submit">Enviar <svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></button>
+            <p class="form-disclaimer"><svg class="icon" aria-hidden="true"><use href="#icon-shield"/></svg> Esta página valida os campos, mas não envia nem armazena os dados. Use apenas dados fictícios até que um canal seguro de recebimento seja configurado.</p>
+            <p id="association-form-status" class="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  <a class="association-floating" href="#associar" aria-label="Quero me associar" title="Quero me associar"><svg class="icon" aria-hidden="true"><use href="#icon-users"/></svg></a>
+  <button class="whatsapp-floating" id="whatsapp-floating" type="button" aria-label="Abrir WhatsApp para 021 98290-6043"><svg class="icon" aria-hidden="true"><use href="#icon-chat"/></svg></button>
+</body>
 </html>
