@@ -554,3 +554,37 @@ body.has-scrolled .association-floating { opacity: 1; visibility: visible; point
   .hero-description { margin-inline: auto; }
   .hero-actions { justify-content: center; }
 }
+
+
+/* Escala tipográfica ampliada para leitura confortável. */
+body { font-size: 16px; }
+.eyebrow, .hero .eyebrow, .hero-copy .eyebrow, .institutions .eyebrow,
+.pending-label, .contact-info span, .solutions-feature-label, .solution-item-number,
+.field-error, .optional, .association-fields .field-hint, .hero-caption,
+.hero-image-caption, .hero-image-caption span:first-child, .hero-visual figcaption,
+.hero-visual figcaption span:first-child, .section-note, .solutions-validation-note,
+.solutions-feature-credit, .channel-note { font-size: 12px; }
+.site-nav, .nav-associate-link, .button, .text-link, .hero-actions .button,
+.hero-actions .text-link, .contact-copy > .button, .commitment .button { font-size: 14px; }
+.site-header .brand-descriptor { font-size: 13px; }
+.hero-description { font-size: 16px; }
+.principle-inner > span, .about-copy p, .section-heading > p,
+.compact-heading > p:last-child, .solution-card > p:not(.pending-label), .steps p,
+.values p, .commitment p:not(.eyebrow), .faq-intro > p:not(.eyebrow),
+.faq-items details > p, .institutions p:not(.eyebrow), .institutions span,
+.contact-info p, .form-heading p, .form-field label, .association-intro-copy,
+.association-security-note p, .association-card-heading p, .solutions-feature-copy,
+.solution-item p { font-size: 14px; }
+.about-copy .lead { font-size: 16px; }
+.contact-lead { font-size: 15px; }
+.channel-status, .form-status { font-size: 14px; }
+.consent-label, .form-disclaimer { font-size: 12px; }
+.association-form .form-disclaimer { font-size: 12px; }
+.association-legend { font-size: 14px; }
+.association-fields .form-field label { font-size: 14px; }
+.faq-items summary { font-size: 15px; }
+.solution-card h3, .steps h3, .values h3, .solution-item h3 { font-size: 16px; }
+.card-link, .solution-item .card-link { font-size: 13px; }
+.step-number { font-size: 14px; }
+input:not([type='checkbox']), textarea,
+.association-fields input:not([type='checkbox']), .association-fields textarea { font-size: 16px; }
