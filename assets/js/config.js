@@ -1,7 +1,7 @@
 window.INTERLIGA_CONFIG = {
-  whatsapp: '',
+  whatsapp: '5521982906043',
   email: '',
-  phone: '',
+  phone: '021 98290-6043',
   address: '',
   publicOrigin: '',
   institutionDescription: '',

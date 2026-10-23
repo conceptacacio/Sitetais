@@ -13,7 +13,7 @@ Os caminhos são relativos. Portanto, os mesmos arquivos funcionam na raiz de um
 
 ## Dados oficiais pendentes
 
-Antes de divulgar o site, preencha os dados confirmados pela empresa no arquivo `assets/js/config.js`: número internacional do WhatsApp (somente dígitos), e-mail, telefone, endereço/região, apresentação institucional e soluções. Revise os campos pendentes no HTML e valide o aviso de privacidade. Não acrescente dados de contato ou de clientes sem confirmação e autorização.
+O telefone oficial informado é `021 98290-6043`, e o WhatsApp correspondente está configurado em `assets/js/config.js` como `5521982906043` (DDI 55 + DDD 21 + número). Antes de divulgar o site, confirme o e-mail, o endereço/região, a apresentação institucional e as soluções; revise os campos pendentes e valide o aviso de privacidade. Não acrescente dados de contato ou de clientes sem confirmação e autorização.
 
 O formulário valida os campos no navegador. Depois de configurar um WhatsApp ou e-mail válido, ele prepara a mensagem no aplicativo correspondente para a pessoa revisar e enviar. Não há backend, armazenamento de leads nem envio automático nesta versão.
 
