@@ -19,6 +19,7 @@
       address: typeof sourceConfig.address === 'string' ? sourceConfig.address.trim() : '',
       publicOrigin: typeof sourceConfig.publicOrigin === 'string' ? sourceConfig.publicOrigin.trim() : '',
       institutionDescription: typeof sourceConfig.institutionDescription === 'string' ? sourceConfig.institutionDescription.trim() : '',
+      web3formsAccessKey: typeof sourceConfig.web3formsAccessKey === 'string' ? sourceConfig.web3formsAccessKey.trim() : '',
       solutions: Array.isArray(sourceConfig.solutions) ? sourceConfig.solutions : []
     };
 
@@ -257,25 +258,64 @@
       return requestNewTab(url);
     }
 
-    function prepareContactMessage(values) {
-      var messageText = composeMessage(values);
-      if (isValidWhatsApp(config.whatsapp)) {
-        if (openWhatsApp(messageText) === null) {
-          setStatus(formStatus, 'O navegador bloqueou a abertura do WhatsApp. Nenhuma mensagem foi enviada.');
-        } else {
-          setStatus(formStatus, 'Mensagem preparada para o WhatsApp. Revise o conteúdo e clique em Enviar no WhatsApp; nada foi enviado automaticamente.');
-        }
+    function buildWeb3FormsPayload(values, accessKey) {
+      return {
+        access_key: accessKey,
+        name: values.name,
+        email: values.email,
+        phone: values.phone || '',
+        institution: values.organization || '',
+        message: values.message,
+        subject: 'Novo contato — Interliga Saúde',
+        replyto: values.email
+      };
+    }
+
+    function sendContactMessage(values, submitButton) {
+      if (!config.web3formsAccessKey || typeof window.fetch !== 'function') {
+        setStatus(formStatus, 'O envio está temporariamente indisponível. Tente novamente mais tarde ou use o WhatsApp 021 98290-6043.');
         return;
       }
-      if (isValidEmail(config.email)) {
-        if (openEmail(messageText) === null) {
-          setStatus(formStatus, 'O navegador bloqueou a abertura do aplicativo de e-mail. Nenhuma mensagem foi enviada.');
-        } else {
-          setStatus(formStatus, 'Mensagem preparada para o aplicativo de e-mail. Revise e envie por lá; nada foi enviado automaticamente.');
-        }
-        return;
+
+      var payload = buildWeb3FormsPayload(values, config.web3formsAccessKey);
+      if (submitButton) {
+        submitButton.disabled = true;
       }
-      setStatus(formStatus, 'Integração pendente. Nenhuma mensagem foi enviada.');
+      form.setAttribute('aria-busy', 'true');
+      setStatus(formStatus, 'Enviando sua mensagem…');
+
+      return window.fetch(form.action || 'https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json'
+        },
+        body: JSON.stringify(payload)
+      }).then(function (response) {
+        return response.json().then(function (data) {
+          return { ok: response.ok, status: response.status, data: data };
+        }, function () {
+          return { ok: response.ok, status: response.status, data: null };
+        });
+      }).then(function (result) {
+        if (result.ok && result.data && result.data.success === true) {
+          setStatus(formStatus, 'Mensagem enviada com sucesso. A solicitação foi encaminhada ao e-mail de atendimento configurado.');
+          form.reset();
+          return;
+        }
+        if (result.status === 429) {
+          setStatus(formStatus, 'Muitas tentativas em pouco tempo. Aguarde e tente novamente.');
+          return;
+        }
+        setStatus(formStatus, 'Não foi possível enviar sua mensagem agora. Tente novamente mais tarde ou use o WhatsApp 021 98290-6043.');
+      }).catch(function () {
+        setStatus(formStatus, 'Não foi possível enviar sua mensagem agora. Verifique sua conexão ou use o WhatsApp 021 98290-6043.');
+      }).then(function () {
+        if (submitButton) {
+          submitButton.disabled = false;
+        }
+        form.removeAttribute('aria-busy');
+      });
     }
 
     function closeMenu(restoreFocus) {
@@ -466,16 +506,16 @@
         var validation = validateForm();
         if (!validation.valid) {
           if (validation.honeypotFilled) {
-            setStatus(formStatus, 'Não foi possível preparar a mensagem. Nenhuma mensagem foi enviada.');
+            setStatus(formStatus, 'Não foi possível enviar sua mensagem. Tente novamente mais tarde.');
           } else {
-            setStatus(formStatus, 'Revise os campos destacados antes de preparar a mensagem.');
+            setStatus(formStatus, 'Revise os campos destacados antes de enviar sua mensagem.');
           }
           if (validation.invalidFields.length > 0) {
             validation.invalidFields[0].focus({ preventScroll: false });
           }
           return;
         }
-        prepareContactMessage(validation.values);
+        sendContactMessage(validation.values, document.getElementById('send-message'));
       });
     }
 
@@ -570,7 +610,7 @@
         return false;
       }
 
-      setStatus(associationFormStatus, 'Os campos parecem válidos segundo a checagem local. Esta página não envia nem conclui o cadastro e não armazenou dados. Use apenas dados fictícios enquanto não houver um canal seguro.');
+      setStatus(associationFormStatus, 'Campos validados. Esta página não enviou nem armazenou seus dados, e o cadastro não foi concluído. Use apenas dados fictícios enquanto não houver um canal seguro de recebimento.');
       return true;
     }
 
