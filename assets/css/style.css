@@ -118,7 +118,7 @@ h1 span { color: var(--mint); }
 .section-note { margin-top: 23px; font-size: 10px; color: #71838a; }
 .compact-heading { max-width: 650px; }
 .compact-heading > p:last-child { margin-top: 19px; font-size: 11px; }
-.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 55px; margin-top: 34px; }
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 55px; margin-top: 34px; }
 .steps article { position: relative; padding-top: 22px; border-top: 1px solid var(--line); }
 .step-number { width: 37px; height: 37px; display: grid; place-items: center; background: var(--mint-light); color: var(--teal); border-radius: 50%; font-family: 'Manrope', sans-serif; font-size: 11px; font-weight: 700; margin-bottom: 16px; }
 .steps h3 { font-size: 16px; }
@@ -254,7 +254,7 @@ body.has-scrolled .whatsapp-floating { opacity: 1; visibility: visible; pointer-
   .solution-card h3 { font-size: 14px; }
   .solution-card > p:not(.pending-label) { font-size: 10px; }
   .card-link { font-size: 9px; gap: 6px; }
-  .steps { gap: 28px; }
+  .steps { grid-template-columns: repeat(2, 1fr); gap: 28px; }
   .steps h3 { font-size: 14px; }
   .values article { padding-inline: 17px; }
   .values h3 { font-size: 14px; }
