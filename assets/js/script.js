@@ -41,9 +41,8 @@
     var associationFormStatus = document.getElementById('association-form-status');
     var associationFields = {
       fullName: document.getElementById('assoc-name'),
-      cpf: document.getElementById('assoc-cpf'),
-      crmUf: document.getElementById('assoc-crm'),
-      specialty: document.getElementById('assoc-specialty'),
+      professionalRegistration: document.getElementById('assoc-registration'),
+      category: document.getElementById('assoc-category'),
       email: document.getElementById('assoc-email'),
       phone: document.getElementById('assoc-phone'),
       cityUf: document.getElementById('assoc-city'),
@@ -519,42 +518,6 @@
       });
     }
 
-    function isValidCpf(value) {
-      var digits = String(value || '').replace(/\D/g, '');
-      if (!/^\d{11}$/.test(digits) || /^(\d)\1{10}$/.test(digits)) {
-        return false;
-      }
-      var sum = 0;
-      var index;
-      for (index = 0; index < 9; index += 1) {
-        sum += Number(digits.charAt(index)) * (10 - index);
-      }
-      var firstCheck = (sum * 10) % 11;
-      if (firstCheck === 10) {
-        firstCheck = 0;
-      }
-      if (firstCheck !== Number(digits.charAt(9))) {
-        return false;
-      }
-      sum = 0;
-      for (index = 0; index < 10; index += 1) {
-        sum += Number(digits.charAt(index)) * (11 - index);
-      }
-      var secondCheck = (sum * 10) % 11;
-      if (secondCheck === 10) {
-        secondCheck = 0;
-      }
-      return secondCheck === Number(digits.charAt(10));
-    }
-
-    function isValidCrmUf(value) {
-      var uf = '(?:AC|AL|AP|AM|BA|CE|DF|ES|GO|MA|MT|MS|MG|PA|PB|PR|PE|PI|RJ|RN|RS|RO|RR|SC|SP|SE|TO)';
-      var normalized = String(value || '').trim().toUpperCase().replace(/\s+/g, ' ');
-      var prefixPattern = new RegExp('^(?:CRM\\s*[-/]?\\s*)?' + uf + '\\s*[-/]?\\s*\\d{1,8}$');
-      var suffixPattern = new RegExp('^\\d{1,8}\\s*[-/]?\\s*' + uf + '$');
-      return prefixPattern.test(normalized) || suffixPattern.test(normalized);
-    }
-
     function isValidCityUf(value) {
       var uf = '(AC|AL|AP|AM|BA|CE|DF|ES|GO|MA|MT|MS|MG|PA|PB|PR|PE|PI|RJ|RN|RS|RO|RR|SC|SP|SE|TO)';
       var match = String(value || '').trim().match(new RegExp('^(.{2,})[,\\s/-]+' + uf + '$', 'i'));
@@ -585,18 +548,16 @@
       }
 
       var fullName = associationFields.fullName ? associationFields.fullName.value.trim() : '';
-      var cpf = associationFields.cpf ? associationFields.cpf.value : '';
-      var crmUf = associationFields.crmUf ? associationFields.crmUf.value : '';
-      var specialty = associationFields.specialty ? associationFields.specialty.value.trim() : '';
+      var professionalRegistration = associationFields.professionalRegistration ? associationFields.professionalRegistration.value.trim() : '';
+      var category = associationFields.category ? associationFields.category.value.trim() : '';
       var email = associationFields.email ? associationFields.email.value.trim() : '';
       var phone = associationFields.phone ? associationFields.phone.value : '';
       var cityUf = associationFields.cityUf ? associationFields.cityUf.value : '';
       var availability = associationFields.availability ? associationFields.availability.value.trim() : '';
 
       validateField('fullName', fullName.length >= 3, 'Informe seu nome completo.');
-      validateField('cpf', isValidCpf(cpf), 'Informe um CPF válido com 11 dígitos e verificadores corretos.');
-      validateField('crmUf', isValidCrmUf(crmUf), 'Informe o registro no formato CRM-UF e número, por exemplo CRM-SP 123456.');
-      validateField('specialty', specialty.length >= 2, 'Informe sua especialidade médica.');
+      validateField('professionalRegistration', professionalRegistration.length >= 3, 'Informe seu conselho profissional e o número de registro.');
+      validateField('category', category.length >= 2, 'Informe sua categoria profissional ou especialidade.');
       validateField('email', isValidEmail(email), 'Informe um e-mail válido.');
       validateField('phone', isValidAssociationPhone(phone), 'Informe um telefone/WhatsApp brasileiro válido.');
       validateField('cityUf', isValidCityUf(cityUf), 'Informe a cidade e a UF, por exemplo Campinas/SP.');

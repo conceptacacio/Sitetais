@@ -1,43 +1,50 @@
-# Interliga Saúde — pacote para GitHub Pages
+# Interliga Saúde — pacote GitHub Pages
 
-Este diretório contém a landing page estática pronta para publicação. Em “Nossas soluções”, a imagem de reunião da Doodle fica à esquerda e as descrições ficam à direita; a origem permanece registrada neste README. As descrições de serviço foram adaptadas da referência PRC e precisam ser confirmadas pela Interliga. O formulário de contato envia diretamente ao Web3Forms; o site não mantém backend ou base própria de leads.
+Este diretório contém a landing page estática completa, responsiva e pronta para publicação. A identidade visual existente foi preservada, incluindo o logotipo, o banner, a foto de “Quem somos”, a imagem de reunião em “Nossas soluções” e as fontes Inter e Manrope locais. Não há backend nem etapa de compilação.
 
-## Publicar
+## Publicar no GitHub Pages
 
-1. Crie um repositório no GitHub ou abra um repositório existente.
-2. Envie **o conteúdo inteiro deste diretório** para a raiz do repositório, mantendo a estrutura `assets/` e os arquivos `index.html` e `privacy.html` no nível principal.
-3. No GitHub, abra **Settings → Pages**. Em **Build and deployment**, selecione **Deploy from a branch**, escolha a branch `main` (ou a branch usada pelo repositório) e a pasta **/(root)**; salve.
-4. Aguarde o GitHub Pages concluir a implantação e abra o endereço mostrado nas configurações de Pages.
+1. Envie **todo o conteúdo deste diretório** para a raiz do repositório, mantendo `index.html`, `privacy.html` e a pasta `assets/`.
+2. No GitHub, acesse **Settings → Pages**.
+3. Em **Build and deployment**, selecione **Deploy from a branch**, escolha a branch usada (por exemplo, `main`) e a pasta **/(root)**; salve.
+4. Aguarde o GitHub Pages concluir a implantação e abra o endereço mostrado nas configurações.
 
-Os caminhos são relativos. Portanto, os mesmos arquivos funcionam na raiz de um domínio de usuário/organização e em um site de projeto, como `usuario.github.io/nome-do-repositorio/`.
+Os caminhos são relativos, então funcionam tanto em um domínio de usuário/organização quanto em um endereço de site de projeto como `usuario.github.io/nome-do-repositorio/`.
 
-## Dados oficiais pendentes
+## Conteúdo institucional
 
-O telefone oficial informado é `021 98290-6043`, e o WhatsApp correspondente está configurado em `assets/js/config.js` como `5521982906043` (DDI 55 + DDD 21 + número). Antes de divulgar o site, confirme o e-mail, o endereço/região, a apresentação institucional e as soluções; revise os campos pendentes e valide o aviso de privacidade. Não acrescente dados de contato ou de clientes sem confirmação e autorização.
+A página apresenta as três descrições de solução aprovadas no relatório de revisão: prestação de serviços assistenciais; gestão e organização de equipes; continuidade e suporte assistencial. Elas descrevem o conteúdo aprovado, mas não confirmam contratos específicos, clientes ou parceiros. Não foram incluídos nomes de instituições, marcas ou novas frentes assistenciais sem confirmação e autorização.
 
-O formulário de contato envia por POST HTTPS ao Web3Forms os campos `name`, `email`, `phone`, `institution` e `message`; Nome, E-mail e Mensagem são obrigatórios, e Telefone e Instituição são opcionais. O assunto é “Novo contato — Interliga Saúde”, com o e-mail da pessoa como Reply-To. A Access Key está em `assets/js/config.js`; o Web3Forms a define como pública para uso no navegador, então ela ficará visível no site publicado. Não coloque senhas ou chaves privadas nesse arquivo. Se disponível no plano, restrinja o domínio autorizado a `conceptacacio.github.io`. A página não mantém cópia própria das mensagens; veja `privacy.html`.
+O menu usa “Nossos valores”. A pergunta da FAQ sobre instituições atendidas e a respectiva resposta permanecem ocultas até autorização expressa. O bloco de exemplos de instituições foi retirado. O rodapé continua removido conforme solicitado.
 
-O formulário “Quero me associar” inclui Nome completo, CPF, CRM/UF, Especialidade médica, E-mail, Telefone/WhatsApp, Cidade/UF de atuação e Períodos de Disponibilidade. Ele valida os campos somente no navegador, mas não envia, salva ou conclui o cadastro. Use apenas dados fictícios até que a empresa configure um canal seguro e valide o aviso de privacidade.
+## Contato e dados
 
-**Segurança da Access Key:** por ser um site estático, o navegador precisa receber a chave para chamar o Web3Forms; portanto, ela fica visível nos arquivos JavaScript publicados. O Web3Forms trata a Access Key como pública. Se a opção estiver disponível na sua conta/plano, restrinja o uso ao domínio publicado; não reutilize aqui uma chave privada de outro serviço.
+O telefone exibido é **(21) 98290-6043** e o botão do WhatsApp mantém o destino oficial configurado (DDI 55 + DDD 21). O e-mail oficial, a identificação legal do controlador e a área específica de atuação continuam pendentes de confirmação.
 
-## Teste real do formulário
+O formulário de contato envia os campos `name`, `email`, `phone`, `institution` e `message` por POST HTTPS para o Web3Forms. Nome, e-mail e mensagem são obrigatórios; telefone e instituição são opcionais. O assunto é “Novo contato — Interliga Saúde” e o e-mail informado é usado como Reply-To. A mensagem de sucesso ou erro é mostrada no formulário.
 
-Após publicar no GitHub Pages, confirme no painel Web3Forms que a Access Key está vinculada ao Gmail desejado. No site, envie uma mensagem de teste com seu nome, seu próprio e-mail, telefone/instituição opcionais e texto sem dados sensíveis. Aguarde a mensagem de sucesso e verifique a caixa de entrada e o Spam do Gmail de destino. Responda para confirmar o Reply-To. Esta entrega não executou um envio real.
+A Access Key do Web3Forms está incluída no arquivo público `assets/js/config.js` porque um site estático precisa disponibilizá-la ao navegador. O valor pode ser visto pelos visitantes; se sua conta/plano permitir, restrinja o uso ao domínio publicado no painel do Web3Forms. Não reutilize uma chave privada de outro serviço.
 
-## Estrutura
+**Nenhum envio real para Gmail foi feito durante esta revisão.** Depois de publicar, confirme no painel Web3Forms o endereço destinatário associado à Access Key. Envie uma mensagem de teste sem dados sensíveis pelo site, verifique a caixa de entrada e o Spam e confirme o Reply-To respondendo ao e-mail recebido.
+
+## Profissionais interessados
+
+A seção “Área para profissionais interessados” pede nome completo, conselho profissional e número de registro, categoria profissional/especialidade, e-mail, telefone/WhatsApp, cidade/UF de atuação e períodos de disponibilidade. O CPF foi removido do contato inicial. Esse formulário **somente valida os campos no navegador**: não envia, não armazena dados e não conclui uma inscrição. Até que exista um canal seguro e o aviso de privacidade institucional esteja validado, use apenas dados fictícios nessa seção.
+
+O aviso em `privacy.html` é preliminar: identificação do controlador, contato de privacidade, bases e prazos ainda precisam de validação institucional. O contato e o link para o aviso permanecem disponíveis na página, sem restaurar o rodapé.
+
+## Estrutura do pacote
 
 - `index.html` — landing page e metadados.
 - `privacy.html` — aviso preliminar de privacidade.
-- `assets/css/style.css` — identidade visual, layout responsivo e animações.
-- `assets/js/script.js` — menu, FAQ, validação do formulário e canais de contato.
-- `assets/js/config.js` — dados institucionais configuráveis.
-- `assets/images/` — banner fornecido, logotipo, foto `conectar.jpg` (mantida sem reprocessamento) e `doodle-group-meeting.webp`, exibida à esquerda em “Nossas soluções”; a origem e o link para Doodle estão documentados neste README.
-- `assets/fonts/` — fontes WOFF2 locais e respectivas licenças OFL.
+- `assets/css/style.css` — layout, identidade visual e regras responsivas, com fontes locais.
+- `assets/js/script.js` — navegação, FAQ, formulários, validação e canais de contato.
+- `assets/js/config.js` — telefone, destino do WhatsApp e configuração pública do Web3Forms.
+- `assets/images/` — logotipo, banner, foto de “Quem somos” e imagem da seção de soluções.
+- `assets/fonts/` — arquivos WOFF2 Inter/Manrope e licenças OFL.
 
-Não envie `node_modules`, caches, arquivos temporários ou arquivos-fonte do ambiente de desenvolvimento; eles não fazem parte deste pacote.
+Não inclua `node_modules`, caches, arquivos temporários ou arquivos do ambiente de desenvolvimento no repositório.
 
+## Origem da imagem de reunião
 
-## Fonte da imagem de reunião
-
-Imagem obtida de [Doodle — The importance of setting agendas for meetings](https://doodle.com/pt_BR/the-importance-of-setting-agendas-for-meetings/). A página não exibe legenda de crédito.
+Imagem obtida de [Doodle — The importance of setting agendas for meetings](https://doodle.com/pt_BR/the-importance-of-setting-agendas-for-meetings/). A página não exibe crédito visível; a origem fica documentada aqui.
