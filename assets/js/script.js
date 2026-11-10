@@ -272,7 +272,7 @@
 
     function sendContactMessage(values, submitButton) {
       if (!config.web3formsAccessKey || typeof window.fetch !== 'function') {
-        setStatus(formStatus, 'O envio está temporariamente indisponível. Tente novamente mais tarde ou use o WhatsApp 021 98290-6043.');
+        setStatus(formStatus, 'O envio está temporariamente indisponível. Tente novamente mais tarde ou use o WhatsApp (21) 98290-6043.');
         return;
       }
 
@@ -306,9 +306,9 @@
           setStatus(formStatus, 'Muitas tentativas em pouco tempo. Aguarde e tente novamente.');
           return;
         }
-        setStatus(formStatus, 'Não foi possível enviar sua mensagem agora. Tente novamente mais tarde ou use o WhatsApp 021 98290-6043.');
+        setStatus(formStatus, 'Não foi possível enviar sua mensagem agora. Tente novamente mais tarde ou use o WhatsApp (21) 98290-6043.');
       }).catch(function () {
-        setStatus(formStatus, 'Não foi possível enviar sua mensagem agora. Verifique sua conexão ou use o WhatsApp 021 98290-6043.');
+        setStatus(formStatus, 'Não foi possível enviar sua mensagem agora. Verifique sua conexão ou use o WhatsApp (21) 98290-6043.');
       }).then(function () {
         if (submitButton) {
           submitButton.disabled = false;
@@ -532,6 +532,81 @@
       return /^\d{10,11}$/.test(digits);
     }
 
+    function buildAssociationWeb3FormsPayload(values) {
+      var message = [
+        'Manifestação de interesse profissional — Interliga Saúde',
+        '',
+        'Nome completo: ' + values.fullName,
+        'Conselho profissional e número de registro: ' + values.professionalRegistration,
+        'Categoria profissional / Especialidade: ' + values.category,
+        'E-mail: ' + values.email,
+        'Telefone/WhatsApp: ' + values.phone,
+        'Cidade/UF de atuação: ' + values.cityUf,
+        'Períodos de disponibilidade: ' + values.availability
+      ].join('\n');
+
+      return {
+        access_key: config.web3formsAccessKey,
+        name: values.fullName,
+        email: values.email,
+        phone: values.phone,
+        professional_registration: values.professionalRegistration,
+        category: values.category,
+        city_uf: values.cityUf,
+        availability: values.availability,
+        subject: 'Novo interesse profissional — Interliga Saúde',
+        replyto: values.email,
+        message: message
+      };
+    }
+
+    function sendAssociationApplication(values, submitButton) {
+      if (!config.web3formsAccessKey || typeof window.fetch !== 'function') {
+        setStatus(associationFormStatus, 'O envio está temporariamente indisponível. Tente novamente mais tarde.');
+        return;
+      }
+
+      var payload = buildAssociationWeb3FormsPayload(values);
+      if (submitButton) {
+        submitButton.disabled = true;
+      }
+      associationForm.setAttribute('aria-busy', 'true');
+      setStatus(associationFormStatus, 'Enviando seu interesse…');
+
+      return window.fetch(associationForm.action || 'https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json'
+        },
+        body: JSON.stringify(payload)
+      }).then(function (response) {
+        return response.json().then(function (data) {
+          return { ok: response.ok, status: response.status, data: data };
+        }, function () {
+          return { ok: response.ok, status: response.status, data: null };
+        });
+      }).then(function (result) {
+        if (result.ok && result.data && result.data.success === true) {
+          setStatus(associationFormStatus, 'Enviado com sucesso! Logo entraremos em contato');
+          associationForm.reset();
+          return;
+        }
+        if (result.status === 429) {
+          setStatus(associationFormStatus, 'Muitas tentativas em pouco tempo. Aguarde e tente novamente.');
+          return;
+        }
+        setStatus(associationFormStatus, 'Não foi possível enviar seu interesse agora. Tente novamente mais tarde.');
+      }).catch(function () {
+        setStatus(associationFormStatus, 'Não foi possível enviar seu interesse agora. Verifique sua conexão e tente novamente.');
+      }).then(function () {
+        if (submitButton) {
+          submitButton.disabled = false;
+        }
+        associationForm.removeAttribute('aria-busy');
+      });
+    }
+
     function validateAssociationForm() {
       var invalidFields = [];
       function validateField(key, isValid, message) {
@@ -551,8 +626,8 @@
       var professionalRegistration = associationFields.professionalRegistration ? associationFields.professionalRegistration.value.trim() : '';
       var category = associationFields.category ? associationFields.category.value.trim() : '';
       var email = associationFields.email ? associationFields.email.value.trim() : '';
-      var phone = associationFields.phone ? associationFields.phone.value : '';
-      var cityUf = associationFields.cityUf ? associationFields.cityUf.value : '';
+      var phone = associationFields.phone ? associationFields.phone.value.trim() : '';
+      var cityUf = associationFields.cityUf ? associationFields.cityUf.value.trim() : '';
       var availability = associationFields.availability ? associationFields.availability.value.trim() : '';
 
       validateField('fullName', fullName.length >= 3, 'Informe seu nome completo.');
@@ -564,15 +639,22 @@
       validateField('availability', availability.length >= 4, 'Descreva seus períodos de disponibilidade.');
 
       if (invalidFields.length > 0) {
-        setStatus(associationFormStatus, 'Revise os campos destacados. Nenhum dado foi enviado ou armazenado.');
+        setStatus(associationFormStatus, 'Revise os campos destacados antes de enviar.');
         if (invalidFields[0] && typeof invalidFields[0].focus === 'function') {
           invalidFields[0].focus({ preventScroll: false });
         }
-        return false;
+        return null;
       }
 
-      setStatus(associationFormStatus, 'Campos validados. Esta página não enviou nem armazenou seus dados, e o cadastro não foi concluído. Use apenas dados fictícios enquanto não houver um canal seguro de recebimento.');
-      return true;
+      return {
+        fullName: fullName,
+        professionalRegistration: professionalRegistration,
+        category: category,
+        email: email,
+        phone: phone,
+        cityUf: cityUf,
+        availability: availability
+      };
     }
 
     function setupAssociationForm() {
@@ -593,7 +675,14 @@
       });
       associationForm.addEventListener('submit', function (event) {
         event.preventDefault();
-        validateAssociationForm();
+        if (associationForm.getAttribute('aria-busy') === 'true') {
+          return;
+        }
+        var values = validateAssociationForm();
+        if (!values) {
+          return;
+        }
+        sendAssociationApplication(values, document.getElementById('association-submit'));
       });
     }
 

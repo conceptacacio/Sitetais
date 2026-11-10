@@ -25,11 +25,11 @@ O formulário de contato envia os campos `name`, `email`, `phone`, `institution`
 
 A Access Key do Web3Forms está incluída no arquivo público `assets/js/config.js` porque um site estático precisa disponibilizá-la ao navegador. O valor pode ser visto pelos visitantes; se sua conta/plano permitir, restrinja o uso ao domínio publicado no painel do Web3Forms. Não reutilize uma chave privada de outro serviço.
 
-**Nenhum envio real para Gmail foi feito durante esta revisão.** Depois de publicar, confirme no painel Web3Forms o endereço destinatário associado à Access Key. Envie uma mensagem de teste sem dados sensíveis pelo site, verifique a caixa de entrada e o Spam e confirme o Reply-To respondendo ao e-mail recebido.
+**Nenhum envio real para Gmail foi feito nesta alteração.** Depois de publicar, confirme no painel Web3Forms o destinatário associado à Access Key. Teste os dois formulários com dados fictícios, verifique a caixa de entrada e o Spam e confira o Reply-To respondendo ao e-mail recebido.
 
 ## Profissionais interessados
 
-A seção “Área para profissionais interessados” pede nome completo, conselho profissional e número de registro, categoria profissional/especialidade, e-mail, telefone/WhatsApp, cidade/UF de atuação e períodos de disponibilidade. O CPF foi removido do contato inicial. Esse formulário **somente valida os campos no navegador**: não envia, não armazena dados e não conclui uma inscrição. Até que exista um canal seguro e o aviso de privacidade institucional esteja validado, use apenas dados fictícios nessa seção.
+A seção “Área para profissionais interessados” envia nome completo, conselho profissional e número de registro, categoria profissional/especialidade, e-mail, telefone/WhatsApp, cidade/UF de atuação e períodos de disponibilidade ao Web3Forms por POST HTTPS; o CPF foi removido do contato inicial. A solicitação usa a Access Key pública configurada e é encaminhada ao endereço associado à chave. O site não mantém uma base própria de inscrições. Confirme o destinatário no painel Web3Forms; o aviso de privacidade continua preliminar.
 
 O aviso em `privacy.html` é preliminar: identificação do controlador, contato de privacidade, bases e prazos ainda precisam de validação institucional. O contato e o link para o aviso permanecem disponíveis na página, sem restaurar o rodapé.
 

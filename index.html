@@ -125,7 +125,7 @@
             <div class="icon-box"><svg class="icon" aria-hidden="true"><use href="#icon-users"/></svg></div>
             <div><h3>Formulário de interesse</h3><p>Preencha os campos abaixo para informar seu interesse.</p></div>
           </div>
-          <form class="association-form" id="association-form" novalidate>
+          <form class="association-form" id="association-form" action="https://api.web3forms.com/submit" method="post" novalidate>
             <fieldset class="association-fields">
               <legend class="association-legend">Dados para cadastro</legend>
               <div class="association-groups">
@@ -153,7 +153,6 @@
               </div>
             </fieldset>
             <button class="button button-primary association-submit" id="association-submit" type="submit">Enviar <svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></button>
-            <p class="form-disclaimer"><svg class="icon" aria-hidden="true"><use href="#icon-shield"/></svg> Esta página valida os campos, mas não envia nem armazena os dados. Use apenas dados fictícios até que um canal seguro de recebimento seja configurado.</p>
             <p id="association-form-status" class="form-status" role="status" aria-live="polite"></p>
           </form>
         </div>
